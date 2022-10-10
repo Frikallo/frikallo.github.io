@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="copyright" content="© 2016 - 2019 Kay Noah">
     <meta name="description" content="Portfolio of a weird developer. Discover some of my works, projects, and games or consult my resume to know more about me :)">
-    <meta property="og:title" content="frikallo.github.io | Noah Kay's online portfolio">
+    <meta property="og:title" content="Frikallo.io | Noah Kay's online portfolio">
     <meta property="og:description" content="Portfolio of a weird developer. Discover some of my works, projects, and games or consult my resume to know more about me :)">
     <meta property="og:url" content="index.html">
     <meta property="og:image" content="src/hotlink-ok/icon-og.png">
@@ -23,7 +23,7 @@
     <style>
           .loader{font-family:Lato,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";background-color:black;position:fixed;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:999999;color:#fff}.loader strong{margin:0;font-weight:500;line-height:1.2;font-size:1.171875rem}.loading-bar{width:70vw;max-width:12rem;height:.4rem;border-radius:.5rem;padding:1px;background-color:#1a1f24}.loading-bar>div{transition:width .1s;background-color:#fff;border-radius:.5rem;height:100%;width:0}.loader #compatibility-notice,.loading-text{width:70vw;max-width:12rem;margin-top:.5rem;height:1rem;font-size:.8rem}.loading-text>div:nth-child(1){opacity:1}.loading-text>div:nth-child(2){opacity:.5}.loading-text>div:nth-child(3){opacity:.3}.loading-text>div:nth-child(4){opacity:.1}.loading-text>div:nth-child(5){opacity:.03}.loading-text>div{opacity:0}.loader #compatibility-notice{max-width:22rem;opacity:0;transition:opacity .4s;pointer-events:none}.loader #compatibility-notice.visible{opacity:1;pointer-events:auto}.loader #compatibility-notice.visible+.loading-bar{display:none}a,a:visited{color:#3498db;text-decoration:none}
         </style>
-    <title>frikallo.github.io | Noah Kay's online portfolio</title>
+    <title>Frikallo.io | Noah Kay's online portfolio</title>
     <meta name="msvalidate.01" content="F7EEDDD08D9B111DCE4BCA8C23B04989">
   </head>
   <body>
@@ -31,9 +31,8 @@
     Portfolio of a weird developer. Discover some of my works, projects, and games or consult my resume to know more about me :)
     </p>
     <main>
-
       <nav>
-      <a href="#" class="title">{{ lang.title }}</a>
+      <a href="#" class="title">frikallo.io</a>
       <div class="menu">
       <a href="https://github.com/frikallo" class="ext-link" title="GitHub">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -80,64 +79,37 @@
       <path xmlns="http://www.w3.org/2000/svg" fill="#DB61A2" d="M286 219c-10-30-63-33-77 3-15-36-67-33-77-3-7 19-4 35 9 54s68 64 68 64 56-45 68-64 15-35 9-54" />
       </svg>
       </a>
-      <a href="#" v-if="cursors.lang === 'fr'" class="lang" @click="language('en', $event)">🇫🇷</a>
-      <a href="#" v-if="cursors.lang === 'en'" class="lang" @click="language('fr', $event)">🇬🇧</a>
+      <a class="ext-link" title="French" id="en"><element id="fr_click" class="button_lang current_lang">Fr</element></a>
+      <a class="ext-link" title="English" id="fr"><element id="en_click" class="button_lang">En</element></a>
       </div>
       </nav>
       <section id="about">
       <h1>Noah Kay</h1>
       <div class="github">
-      <img src="https://img.shields.io/github/followers/frikallo?style=social" alt="" />
-      <img src="https://img.shields.io/github/stars/frikallo?style=social" alt="" />
+        <img src="https://img.shields.io/github/followers/frikallo?style=social" alt="" />
+        <img src="https://img.shields.io/github/stars/frikallo?style=social" alt="" />
       </div>
-      <span class="description">{{ lang.about.description }}</span>
+      <span class="description">
+        <span id="en">Not really good at stylish introductions, but I hope you find some interesting stuff below!</span>
+        <span id="fr">Pas vraiment doué pour les introductions stylées, mais j'espère que vous trouverez des choses intéressantes ci-dessous!</span>
+      </span>
       </section>
-
       <section id="works">
       <div class="content">
       <div class="container" @mouseout="preview(null)">
-
       <div class="works">
-      <figure v-for="work in works.filter((_, i) => get.works > i)" :key="work.name" @mouseover="preview($event)" @click="preview($event)">
-      <div class="figimg">
-      <div class="sprite">
-      <img :src="'/src/medias/used/'+work.name+'.jpg'" alt="" loading="lazy">
-      </div>
-      <video v-if="!get.mobile" preload="none" loop playsinline muted webkit-playsinline="true">
-      <source :src="'/src/medias/works/'+work.name+'.mp4'">
-      </video>
-      </div>
-      <figcaption>
-      <h2>{{ work.title }}</h2>
-      <template v-if="work.links && work.links.GitHub">
-      <a v-for="section in ['stars', 'forks']" class="github" :href="work.links.GitHub" target="_blank" :aria-label="work.links.GitHub"><img :src="'https://img.shields.io/github/'+section+'/'+work.links.GitHub.match(/github.com[/]([^/]+[/][^/]+)/)[1]+'?style=social'" alt="" /></a>
-      </template>
-      <a v-else class="github disabled" href="#" aria-label="No repository"><img src="src/medias/misc/svg/github-no-repo.svg" alt="" /></a>
-      <p v-html="work.text"></p>
-      <div v-if="work.notes" class="notes"><span v-for="(type, text) in work.notes" :class="[type]">{{ text }}</span></div>
-      <div v-if="work.links" class="links"><a v-for="(link, name) in work.links" :href="link.replace(/^\//, 'index.html')">{{ name }}</a></div>
-      <div v-if="work.status" class="status"><img :src="work.status" alt=""></div>
-      </figcaption>
-      </figure>
-      <figure class="more" :key="'more'" v-if="works.length > get.works" @mouseover="preview($event)" @click="set.works += 999; $event.preventDefault()">
-      <div class="figimg">
-      <div class="sprite sprite-more"></div>
-      </div>
-      <figcaption>
-      <h2>{{ lang.works.more.title }}</h2>
-      <p v-html="lang.works.more.text"></p>
-      <a href="#works">{{ lang.works.more.button }}</a>
-      </figcaption>
-      </figure>
       </div>
       </div>
       </div>
       </section>
-
       <div class="container nota-bene">
-      <p v-html="lang.copyright" class="copyright">Copyright © Noah Kay — Frikallo 2022-2022 • All rights reserved Last updated on 10/08/2022</p>
+      <p v-html="lang.copyright" class="copyright">
+        <span id="en">Copyright © Noah Kay — Frikallo 2022-2022 • All rights reserved Last updated on 10/08/2022</span>
+        <span id="fr">Copyright © Noah Kay - Frikallo 2022-2022 - Tous droits réservés Dernière mise à jour le 10/08/2022</span>
+      </p>
       </div>
       </template>
     </main>
+    <script src="src/lite/js/main.js"></script>
   </body>
 </html>
