@@ -441,3 +441,15 @@ video {
     left: 0;
     width: 100%
   }
+
+element {
+    font-family: lato;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    width: 4rem
+}
