@@ -1,5 +1,3 @@
-### CONSTANTS ###
-
 github_disabled = """<a v-else class="github disabled" href="#" aria-label="No repository"><img src="src/medias/misc/svg/github-no-repo.svg" alt="" /></a>"""
 def add_work(IMGLINK, VIDLINK, WORKTITLE, GITHUBLINK, DESCRIPTIONEN, DESCRIPTIONFR, NAMEOFLINKEN, NAMEOFLINKFR, REPO):
     work = f"""    
@@ -24,5 +22,19 @@ def add_work(IMGLINK, VIDLINK, WORKTITLE, GITHUBLINK, DESCRIPTIONEN, DESCRIPTION
                 </figure>"""
     return work
 
-
-print(add_work("https://github.com/Frikallo/MISST/raw/main/src/Assets/showcaseimage1.jpeg", "https://video-hover-1.superhi.com/1-island.mp4", "MISST", "https://github.com/", "A local GUI music source separation tool built on Tkinter and public Facebook models serving as a free and open source Stem Player", "Un outil de séparation des sources musicales à interface graphique locale construit sur Tkinter et des modèles Facebook publics servant de lecteur Stem gratuit et à code source ouvert.", "Github", "misst"))
+def add_announcment(DATE, ANNOUNCMENT, ANNOUNCMENTFR, LINK, LINKTITLE, LINKTITLEFR, TITLE, TITLEFR):
+    announcment = f"""            
+                <article class="announcement">
+                    <header>
+                        <h3><span id="en">{TITLE}</span><span id="fr">{TITLEFR}</span></h3>
+                        <div class="archive-meta">
+                            <time>{DATE}</time>
+                        </div>
+                    </header>
+                    <div class="archive-entry post-content ">
+                        <p><span id="en">{ANNOUNCMENT}</span><span id="fr">{ANNOUNCMENTFR}</span></p>
+        
+                        <a href="{LINK}"><span id="en">{LINKTITLE} &gt;</span><span id="fr">{LINKTITLEFR} &gt;</span></a>
+                    </div>
+                </article>"""
+    return announcment

@@ -98,123 +98,16 @@
       <div class="content">
       <div class="container" @mouseout="preview(null)">
       <div class="works">
-        <figure key="work.name" @mouseover="preview($event)" @click="preview($event)">
-          <div class="figimg">
-              <div class="sprite">
-                  <img src="{IMGLINK}" alt="" loading="lazy">
-              </div>
-              <video preload="none" loop playsinline muted webkit-playsinline="true">
-                  <source src="{VIDLINK}">
-              </video>
-          </div>
-      <figcaption>
-          <h2>{WORKTITLE}</h2>
-          <a class="github" href="{GITHUBLINK}" target="_blank" aria-label="{GITHUBLINK}"><img src="https://img.shields.io/github/stars/frikallo/{REPO}?style=social" alt="" /></a>
-          <a class="github" href="{GITHUBLINK}" target="_blank" aria-label="{GITHUBLINK}"><img src="https://img.shields.io/github/forks/frikallo/{REPO}?style=social" alt="" /></a>
-          <p><span><span id="en">{DESCRIPTIONEN}</span><span id="fr">{DESCRIPTIONFR}</span></span></p>
-          <div class="notes"></div>
-          <div class="links"><a href="{GITHUBLINK}"><span id="en">{NAMEOFLINKEN}</span><span id="fr">{NAMEOFLINKFR}</span></a></div>
-          <div class="status"><img :src="work.status" alt=""></div>
-      </figcaption>
-      </figure>
-      <figure key="work.name" @mouseover="preview($event)" @click="preview($event)">
-        <div class="figimg">
-            <div class="sprite">
-                <img src="{IMGLINK}" alt="" loading="lazy">
-            </div>
-            <video preload="none" loop playsinline muted webkit-playsinline="true">
-                <source src="{VIDLINK}">
-            </video>
+      </div>
+      </div>
+      </div>
+      <article class="announcements">
+        <header class="page-header">
+            <h2><span id="en">News &amp; Announcements</span><span id="fr">Nouvelles &amp; annonces</span></h2>
+        </header>
+        <div class="announcement-listing">
         </div>
-    <figcaption>
-        <h2>{WORKTITLE}</h2>
-        <a class="github" href="{GITHUBLINK}" target="_blank" aria-label="{GITHUBLINK}"><img src="https://img.shields.io/github/stars/frikallo/{REPO}?style=social" alt="" /></a>
-        <a class="github" href="{GITHUBLINK}" target="_blank" aria-label="{GITHUBLINK}"><img src="https://img.shields.io/github/forks/frikallo/{REPO}?style=social" alt="" /></a>
-        <p><span><span id="en">{DESCRIPTIONEN}</span><span id="fr">{DESCRIPTIONFR}</span></span></p>
-        <div class="notes"></div>
-        <div class="links"><a href="{GITHUBLINK}"><span id="en">{NAMEOFLINKEN}</span><span id="fr">{NAMEOFLINKFR}</span></a></div>
-        <div class="status"><img :src="work.status" alt=""></div>
-    </figcaption>
-    </figure>
-    <figure key="work.name" @mouseover="preview($event)" @click="preview($event)">
-      <div class="figimg">
-          <div class="sprite">
-              <img src="{IMGLINK}" alt="" loading="lazy">
-          </div>
-          <video preload="none" loop playsinline muted webkit-playsinline="true">
-              <source src="{VIDLINK}">
-          </video>
-      </div>
-  <figcaption>
-      <h2>{WORKTITLE}</h2>
-      <a class="github" href="{GITHUBLINK}" target="_blank" aria-label="{GITHUBLINK}"><img src="https://img.shields.io/github/stars/frikallo/{REPO}?style=social" alt="" /></a>
-      <a class="github" href="{GITHUBLINK}" target="_blank" aria-label="{GITHUBLINK}"><img src="https://img.shields.io/github/forks/frikallo/{REPO}?style=social" alt="" /></a>
-      <p><span><span id="en">{DESCRIPTIONEN}</span><span id="fr">{DESCRIPTIONFR}</span></span></p>
-      <div class="notes"></div>
-      <div class="links"><a href="{GITHUBLINK}"><span id="en">{NAMEOFLINKEN}</span><span id="fr">{NAMEOFLINKFR}</span></a></div>
-      <div class="status"><img :src="work.status" alt=""></div>
-  </figcaption>
-  </figure>
-  <figure key="work.name" @mouseover="preview($event)" @click="preview($event)">
-    <div class="figimg">
-        <div class="sprite">
-            <img src="{IMGLINK}" alt="" loading="lazy">
-        </div>
-        <video preload="none" loop playsinline muted webkit-playsinline="true">
-            <source src="{VIDLINK}">
-        </video>
-    </div>
-<figcaption>
-    <h2>{WORKTITLE}</h2>
-    <a class="github" href="{GITHUBLINK}" target="_blank" aria-label="{GITHUBLINK}"><img src="https://img.shields.io/github/stars/frikallo/{REPO}?style=social" alt="" /></a>
-    <a class="github" href="{GITHUBLINK}" target="_blank" aria-label="{GITHUBLINK}"><img src="https://img.shields.io/github/forks/frikallo/{REPO}?style=social" alt="" /></a>
-    <p><span><span id="en">{DESCRIPTIONEN}</span><span id="fr">{DESCRIPTIONFR}</span></span></p>
-    <div class="notes"></div>
-    <div class="links"><a href="{GITHUBLINK}"><span id="en">{NAMEOFLINKEN}</span><span id="fr">{NAMEOFLINKFR}</span></a></div>
-    <div class="status"><img :src="work.status" alt=""></div>
-</figcaption>
-</figure>
-<figure key="work.name" @mouseover="preview($event)" @click="preview($event)">
-  <div class="figimg">
-      <div class="sprite">
-          <img src="{IMGLINK}" alt="" loading="lazy">
-      </div>
-      <video preload="none" loop playsinline muted webkit-playsinline="true">
-          <source src="{VIDLINK}">
-      </video>
-  </div>
-<figcaption>
-  <h2>{WORKTITLE}</h2>
-  <a class="github" href="{GITHUBLINK}" target="_blank" aria-label="{GITHUBLINK}"><img src="https://img.shields.io/github/stars/frikallo/{REPO}?style=social" alt="" /></a>
-  <a class="github" href="{GITHUBLINK}" target="_blank" aria-label="{GITHUBLINK}"><img src="https://img.shields.io/github/forks/frikallo/{REPO}?style=social" alt="" /></a>
-  <p><span><span id="en">{DESCRIPTIONEN}</span><span id="fr">{DESCRIPTIONFR}</span></span></p>
-  <div class="notes"></div>
-  <div class="links"><a href="{GITHUBLINK}"><span id="en">{NAMEOFLINKEN}</span><span id="fr">{NAMEOFLINKFR}</span></a></div>
-  <div class="status"><img :src="work.status" alt=""></div>
-</figcaption>
-</figure>
-<figure key="work.name" @mouseover="preview($event)" @click="preview($event)">
-  <div class="figimg">
-      <div class="sprite">
-          <img src="{IMGLINK}" alt="" loading="lazy">
-      </div>
-      <video preload="none" loop playsinline muted webkit-playsinline="true">
-          <source src="{VIDLINK}">
-      </video>
-  </div>
-<figcaption>
-  <h2>{WORKTITLE}</h2>
-  <a class="github" href="{GITHUBLINK}" target="_blank" aria-label="{GITHUBLINK}"><img src="https://img.shields.io/github/stars/frikallo/{REPO}?style=social" alt="" /></a>
-  <a class="github" href="{GITHUBLINK}" target="_blank" aria-label="{GITHUBLINK}"><img src="https://img.shields.io/github/forks/frikallo/{REPO}?style=social" alt="" /></a>
-  <p><span><span id="en">{DESCRIPTIONEN}</span><span id="fr">{DESCRIPTIONFR}</span></span></p>
-  <div class="notes"></div>
-  <div class="links"><a href="{GITHUBLINK}"><span id="en">{NAMEOFLINKEN}</span><span id="fr">{NAMEOFLINKFR}</span></a></div>
-  <div class="status"><img :src="work.status" alt=""></div>
-</figcaption>
-</figure>
-      </div>
-      </div>
-      </div>
+      </article>
       </section>
       <div class="container nota-bene">
       <p v-html="lang.copyright" class="copyright">
