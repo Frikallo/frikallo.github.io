@@ -1,0 +1,15 @@
+IMGLINK = ./projects/yakbot/assets/thumbnail.png
+VIDLINK = ./projects/yakbot/assets/thumbnail.mp4
+WORKTITLE = YAKBot
+GITHUBLINK = https://github.com/Frikallo/YakBot
+DESCRIPTIONEN = YAKbot is a collection of AI models based on image generation, analysis, and processing; all wrapped into one Discord Bot.
+DESCRIPTIONFR = YAKbot est une collection de modèles d'IA basés sur la génération, l'analyse et le traitement d'images, le tout intégré dans un Bot Discord.
+NAMEOFLINKEN = Github
+NAMEOFLINKFR = Github
+REPO = yakbot
+ARCHIVED = False
+INDEVELOPMENT = False
+EXPERIMENTAL = False
+LINK2 = None
+LINK2TITLEEN = 
+LINK2TITLEEN = 

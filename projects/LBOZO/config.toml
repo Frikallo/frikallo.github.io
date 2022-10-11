@@ -1,0 +1,15 @@
+IMGLINK = ./projects/LBOZO/assets/thumbnail.png
+VIDLINK = ./projects/LBOZO/assets/thumbnail.mp4
+WORKTITLE = LBOZO
+GITHUBLINK = https://github.com/Frikallo/LBOZO
+DESCRIPTIONEN = LBOZO is a hybrid Windows ransomware that encrypts all the user files with a strong encryption scheme.
+DESCRIPTIONFR = LBOZO est un ransomware hybride pour Windows qui crypte tous les fichiers de l'utilisateur à l'aide d'un schéma de cryptage puissant.
+NAMEOFLINKEN = Github
+NAMEOFLINKFR = Github
+REPO = lbozo
+ARCHIVED = False
+INDEVELOPMENT = False
+EXPERIMENTAL = False
+LINK2 = None
+LINK2TITLEEN = 
+LINK2TITLEEN = 
