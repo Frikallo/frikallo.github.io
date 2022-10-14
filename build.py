@@ -1,6 +1,7 @@
 import os
 import cv2
 import datetime
+from subprocess import call
 
 github_disabled = """<a v-else class="github disabled" href="#" aria-label="No repository"><img src="src/medias/misc/svg/github-no-repo.svg" alt="" /></a>"""
 def add_work(IMGLINK, VIDLINK, WORKTITLE, GITHUBLINK, DESCRIPTIONEN, DESCRIPTIONFR, NAMEOFLINKEN, NAMEOFLINKFR, REPO, ARCHIVED=False, INDEVELOPMENT=False, EXPERIMENTAL=False, LINK2=None, LINK2TITLEEN=None, LINK2TITLEFR=None):
@@ -140,3 +141,9 @@ index = north + works + center + ("\n").join(announcement_list) + south
 
 with open("./index.html", "w") as f:
     f.write(index)
+
+commit_message = "Updated Build {}".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+
+call('git add .', shell = True)
+call('git commit -m "'+ commit_message +'"', shell = True)
+call('git push origin main', shell = True)
