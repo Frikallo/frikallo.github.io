@@ -125,12 +125,6 @@ figure {
     }
 }
 
-@media(min-width:992px) {
-    #works figure, #works figure video, #works figure .figimg {
-        width: 22.5rem
-    }
-}
-
 #works figure h2 {
     margin: .5rem 0
 }
