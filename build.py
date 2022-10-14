@@ -1,4 +1,6 @@
 import os
+import cv2
+import datetime
 
 github_disabled = """<a v-else class="github disabled" href="#" aria-label="No repository"><img src="src/medias/misc/svg/github-no-repo.svg" alt="" /></a>"""
 def add_work(IMGLINK, VIDLINK, WORKTITLE, GITHUBLINK, DESCRIPTIONEN, DESCRIPTIONFR, NAMEOFLINKEN, NAMEOFLINKFR, REPO, ARCHIVED=False, INDEVELOPMENT=False, EXPERIMENTAL=False, LINK2=None, LINK2TITLEEN=None, LINK2TITLEFR=None):
@@ -63,7 +65,6 @@ announcement_list = []
 for _ in os.listdir("./projects"):
     configs = []
     project_title = _
-    print(project_title)
     with open(f"./projects/{project_title}/config.toml", "r") as f:
         config = f.read()
     config = config.splitlines()
@@ -99,6 +100,11 @@ for _ in os.listdir("./projects"):
         LINK2 = None
     LINK2TITLEEN = configs[13]
     LINK2TITLEFR = configs[14]
+    
+    vidcap = cv2.VideoCapture(os.path.abspath(VIDLINK))
+    success,image = vidcap.read()
+    cv2.imwrite(os.path.abspath(IMGLINK), image)
+
     works.append(add_work(IMGLINK, VIDLINK, WORKTITLE, GITHUBLINK, DESCRIPTIONEN, DESCRIPTIONFR, NAMEOFLINKEN, NAMEOFLINKFR, REPO, ARCHIVED, INDEVELOPMENT, EXPERIMENTAL, LINK2, LINK2TITLEEN, LINK2TITLEFR))
 
     announcments = []
@@ -127,6 +133,7 @@ with open("./templates/center.html", "r") as f:
 
 with open("./templates/south.html", "r") as f:
     south = f.read()
+    south = south.replace("varDATE", str(datetime.datetime.now().strftime("%Y-%m-%d")))
 
 index = north + works + center + ("\n").join(announcement_list) + south
 
