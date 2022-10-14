@@ -139,3 +139,7 @@ index = north + works + center + ("\n").join(announcement_list) + south
 
 with open("./index.html", "w") as f:
     f.write(index)
+
+os.system("git add .")
+os.system("git commit -m 'updated build'")
+os.system("git push")
