@@ -107,8 +107,9 @@ for _ in os.listdir("./projects"):
 
     works.append(add_work(IMGLINK, VIDLINK, WORKTITLE, GITHUBLINK, DESCRIPTIONEN, DESCRIPTIONFR, NAMEOFLINKEN, NAMEOFLINKFR, REPO, ARCHIVED, INDEVELOPMENT, EXPERIMENTAL, LINK2, LINK2TITLEEN, LINK2TITLEFR))
 
+for _ in os.listdir("./announcements"):
     announcments = []
-    with open(f"./projects/{project_title}/announcement.txt", "r") as f:
+    with open(os.path.abspath(f"./announcements/{_}/"), "r") as f:
         announcment = f.read()
     announcment = announcment.splitlines()
     for line in announcment:
