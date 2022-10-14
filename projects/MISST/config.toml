@@ -1,5 +1,5 @@
-IMGLINK = ./projects/MISST/assets/thumbnail.png
-VIDLINK = ./projects/MISST/assets/thumbnail.mp4
+IMGLINK = https://github.com/Frikallo/frikallo.github.io/blob/main/projects/MISST/assets/thumbnail.png
+VIDLINK = https://github.com/Frikallo/frikallo.github.io/blob/main/projects/MISST/assets/thumbnail.mp4
 WORKTITLE = MISST
 GITHUBLINK = https://github.com/Frikallo/MISST
 DESCRIPTIONEN = A local GUI music source separation tool built on Tkinter and public Facebook models serving as a free and open source Stem Player
