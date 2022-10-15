@@ -1,20 +1,20 @@
 const videos = document.querySelectorAll("video")
 
 videos.forEach(video => {
-  video.addEventListener("mouseover", function () {
-    this.play()
+  video.parentElement.parentElement.addEventListener("mouseover", function () {
+    video.play()
   })
   
-  video.addEventListener("mouseout", function () {
-    this.pause()
+  video.parentElement.parentElement.addEventListener("mouseout", function () {
+    video.pause()
   })
   
-  video.addEventListener("touchstart", function () {
-    this.play()
+  video.parentElement.parentElement.addEventListener("touchstart", function () {
+    video.play()
   })
   
-  video.addEventListener("touchend", function () {
-    this.pause()
+  video.parentElement.parentElement.addEventListener("touchend", function () {
+    video.pause()
   })
 })
 

@@ -11,7 +11,7 @@ def add_work(IMGLINK, VIDLINK, WORKTITLE, GITHUBLINK, DESCRIPTIONEN, DESCRIPTION
                         <div class="sprite">
                             <img src="{IMGLINK}" alt="" loading="lazy">
                         </div>
-                        <video preload="none" loop playsinline muted webkit-playsinline="true">
+                        <video preload="metadata" loop playsinline muted webkit-playsinline="true">
                             <source src="{VIDLINK}">
                         </video>
                     </div>
