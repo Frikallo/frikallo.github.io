@@ -437,7 +437,7 @@ video {
   }
 
 element {
-    font-family: lato;
+    font-family: lato, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
     font-weight: bold;
     text-transform: uppercase;
     font-size: medium;
