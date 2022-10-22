@@ -200,7 +200,7 @@ figure {
     border: none
 }
 
-#works figcaption a {
+a {
     float: left;
     margin: .5rem;
     margin-right: 1rem;
@@ -214,7 +214,7 @@ figure {
     transition: color .15s ease-in-out, background-color .15s ease-in-out
 }
 
-#works figcaption a:hover {
+a:hover {
     color: #fff;
     background-color: #3498db
 }
