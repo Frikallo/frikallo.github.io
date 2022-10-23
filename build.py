@@ -95,14 +95,11 @@ works = ("\n").join(works)
 with open("./templates/north.html", "r") as f:
     north = f.read()
 
-with open("./templates/center.html", "r") as f:
-    center = f.read()
-
 with open("./templates/south.html", "r") as f:
     south = f.read()
     south = south.replace("varDATE", str(datetime.datetime.now().strftime("%Y-%m-%d")))
 
-index = north + works + center + south
+index = north + works + south
 
 with open("./index.html", "w") as f:
     f.write(index)
