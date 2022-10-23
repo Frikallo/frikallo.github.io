@@ -43,24 +43,6 @@ def add_work(IMGLINK, VIDLINK, WORKTITLE, GITHUBLINK, DESCRIPTIONEN, DESCRIPTION
                 </figure>"""
     return work
 
-
-def add_announcment(DATE, ANNOUNCMENT, ANNOUNCMENTFR, LINK, LINKTITLE, LINKTITLEFR, TITLE, TITLEFR):
-    announcment = f"""            
-                <article class="announcement">
-                    <header>
-                        <h3><span id="en">{TITLE}</span><span id="fr">{TITLEFR}</span></h3>
-                        <div class="archive-meta">
-                            <time>{DATE}</time>
-                        </div>
-                    </header>
-                    <div class="archive-entry post-content ">
-                        <p><span id="en">{ANNOUNCMENT}</span><span id="fr">{ANNOUNCMENTFR}</span></p>
-        
-                        <a href="{LINK}"><span id="en">{LINKTITLE} &gt;</span><span id="fr">{LINKTITLEFR} &gt;</span></a>
-                    </div>
-                </article>"""
-    return announcment
-
 works = []
 announcement_list = []
 for _ in os.listdir("./projects"):
@@ -108,23 +90,6 @@ for _ in os.listdir("./projects"):
 
     works.append(add_work(IMGLINK, VIDLINK, WORKTITLE, GITHUBLINK, DESCRIPTIONEN, DESCRIPTIONFR, NAMEOFLINKEN, NAMEOFLINKFR, REPO, ARCHIVED, INDEVELOPMENT, EXPERIMENTAL, LINK2, LINK2TITLEEN, LINK2TITLEFR))
 
-for _ in os.listdir("./announcements"):
-    announcments = []
-    with open(os.path.abspath(f"./announcements/{_}/"), "r") as f:
-        announcment = f.read()
-    announcment = announcment.splitlines()
-    for line in announcment:
-        announcments.append(line.split("=")[1].strip())
-    DATE = announcments[0]
-    ANNOUNCMENT = announcments[1]
-    ANNOUNCMENTFR = announcments[2]
-    LINK = announcments[3]
-    LINKTITLE = announcments[4]
-    LINKTITLEFR = announcments[5]
-    TITLE = announcments[6]
-    TITLEFR = announcments[7]
-    announcement_list.append(add_announcment(DATE, ANNOUNCMENT, ANNOUNCMENTFR, LINK, LINKTITLE, LINKTITLEFR, TITLE, TITLEFR))
-
 works = ("\n").join(works)
 
 with open("./templates/north.html", "r") as f:
@@ -137,7 +102,7 @@ with open("./templates/south.html", "r") as f:
     south = f.read()
     south = south.replace("varDATE", str(datetime.datetime.now().strftime("%Y-%m-%d")))
 
-index = north + works + center + ("\n").join(announcement_list) + south
+index = north + works + center + south
 
 with open("./index.html", "w") as f:
     f.write(index)

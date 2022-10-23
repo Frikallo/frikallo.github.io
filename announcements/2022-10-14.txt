@@ -1,8 +1,0 @@
-date = 2022-10-14
-announcement = This is an announcement
-announcementfr = Ceci est une annonce
-LINK = https://example.com
-LINKTITLE = Example
-LINKTITLEFR = Exemple
-TITLE = Announcement
-TITLEFR = Annonce
