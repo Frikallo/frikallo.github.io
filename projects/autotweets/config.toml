@@ -1,6 +1,6 @@
 IMGLINK = ./projects/autotweets/assets/thumbnail.png
 VIDLINK = ./projects/autotweets/assets/thumbnail.mp4
-WORKTITLE = AutoTweets
+WORKTITLE = autotweets
 GITHUBLINK = https://github.com/Frikallo/autotweets
 DESCRIPTIONEN = HuggingTweets on wheels. A CLI program to automatically generate Tweets with Huggingface
 DESCRIPTIONFR = HuggingTweets sur roues. Un programme CLI pour générer automatiquement des Tweets avec Huggingface
