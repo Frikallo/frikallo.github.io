@@ -11,5 +11,5 @@ ARCHIVED = False
 INDEVELOPMENT = False
 EXPERIMENTAL = False
 LINK2 = pypi.org/project/footprint-py/
-LINK2TITLEEN = Install
-LINK2TITLEEN = Installer
+LINK2TITLEEN = Download
+LINK2TITLEEN = Télécharger
