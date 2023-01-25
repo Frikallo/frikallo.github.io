@@ -48,7 +48,7 @@ announcement_list = []
 for _ in os.listdir("./projects"):
     configs = []
     project_title = _
-    with open(f"./projects/{project_title}/config.toml", "r") as f:
+    with open(f"./projects/{project_title}/config.toml", "r", encoding="utf-8") as f:
         config = f.read()
     config = config.splitlines()
     for line in config:
@@ -85,23 +85,26 @@ for _ in os.listdir("./projects"):
     LINK2TITLEFR = configs[14]
     
     vidcap = cv2.VideoCapture(os.path.abspath(VIDLINK))
-    success,image = vidcap.read()
-    cv2.imwrite(os.path.abspath(IMGLINK), image)
+    if vidcap.isOpened():
+        success,image = vidcap.read()
+        if success:
+            cv2.imwrite(os.path.abspath(IMGLINK), image)
+    vidcap.release()
 
     works.append(add_work(IMGLINK, VIDLINK, WORKTITLE, GITHUBLINK, DESCRIPTIONEN, DESCRIPTIONFR, NAMEOFLINKEN, NAMEOFLINKFR, REPO, ARCHIVED, INDEVELOPMENT, EXPERIMENTAL, LINK2, LINK2TITLEEN, LINK2TITLEFR))
 
 works = ("\n").join(works)
 
-with open("./templates/north.html", "r") as f:
+with open("./templates/north.html", "r", encoding="utf-8") as f:
     north = f.read()
 
-with open("./templates/south.html", "r") as f:
+with open("./templates/south.html", "r", encoding="utf-8") as f:
     south = f.read()
     south = south.replace("varDATE", str(datetime.datetime.now().strftime("%Y-%m-%d")))
 
 index = north + works + south
 
-with open("./index.html", "w") as f:
+with open("./index.html", "w", encoding="utf-8") as f:
     f.write(index)
 
 commit_message = "Updated Build {}".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
