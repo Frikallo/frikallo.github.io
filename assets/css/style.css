@@ -25,6 +25,16 @@ a:hover {
 	cursor: pointer;
 }
 
+.background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	overflow: hidden;
+}
+
 .hero-container {
 	height: 100%;
     background: radial-gradient(140% 107.13% at 50% 10%,transparent 37.41%,#63e 69.27%,#fff 100%);
