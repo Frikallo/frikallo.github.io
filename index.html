@@ -4,14 +4,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Noah Kay</title>
+        <title>Frikallo.io - Noah Kay's Online Portfolio</title>
         <meta name="description" content="Developer and Designer in Canada">
         <link rel="canonical" href="https://frikallo.github.io">
         <meta property="og:locale" content="ca_CA">
         <meta property="og:type" content="website">
-        <meta property="og:site_name" content="Noah Kay">
-        <meta property="og:title" content="Noah Kay">
-        <meta property="og:description" content="Developer and Designer in Canada">
+        <meta property="og:site_name" content="Frikallo.io">
+        <meta property="og:title" content="Frikallo.io - Noah Kay's Online Portfolio">
+        <meta property="og:description" content="Personal Portfolio for Noah Kay, a Developer and Designer in Canada">
         <meta property="og:url" content="https://frikallo.github.io">
         <meta property="og:image" content="https://frikallo.github.io/assets/share-image.png">
         <meta property="og:image:type" content="image/png">
@@ -25,25 +25,57 @@
         <link rel="apple-touch-icon" href="/assets/favicon.png">
     </head>
     <body>
+        <div id="particles-js"></div>
         <header class="nav-container">
+            <div class="nav-logo">
+                <a href="">🌕 frikallo.io</a>
+            </div>
             <nav class="nav">
-                <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">Projects</a>
-                <a href="#" class="nav-link">Resume</a>
-                <a href="#" class="nav-link">Contact</a>
+                <a href="#" class="nav-link">
+                    <span id="EN">Home</span>
+                    <span id="FR">Accueil</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span id="EN">About</span>
+                    <span id="FR">À propos</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span id="EN">Projects</span>
+                    <span id="FR">Projets</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span id="EN">Resume</span>
+                    <span id="FR">CV</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span id="EN">Blog</span>
+                    <span id="FR">Blog</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span id="EN">Contact</span>
+                    <span id="FR">Contact</span>
+                </a>
             </nav>
+            <div class="language-switch">
+                <span class="language-switch-button">🇨🇦</span>
+            </div>
         </header>
 		<main>
             <div class="hero-container">
                 <div class="hero">
                     <div class="hero-content">
                         <h1>Frikallo - Noah Kay</h1>
-                        <button class="hero-button">View Projects</button>
+                        <a href="#projects">
+                            <button class="hero-button">
+                                <span id="EN">View Projects</span>
+                                <span id="FR">Voir les projets</span>
+                            </button>
+                        </a>
                     </div>
                     <div id="heroCanvas"></div>
                 </div>
             </div>
+            <a id="projects"></a>
             <div class="projects-container">
                 <div class="projects-grid">
                 </div>
@@ -57,9 +89,11 @@
 			</div>
 		</main>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 		<script type="module" crossorigin="anonymous" src="assets/js/Background.js"></script>
-        <script type="module" crossorigin="anonymous" src="assets/js/Grid.js"></script>
+        <script type="module" crossorigin="anonymous" src="assets/js/Projects.js"></script>
         <script type="module" crossorigin="anonymous" src="assets/js/ASCIIHero.js"></script>
         <script crossorigin="anonymous" src="assets/js/Build.js"></script>
+        <script crossorigin="anonymous" src="assets/js/LanguageSwitch.js"></script>
     </body>
 </html>

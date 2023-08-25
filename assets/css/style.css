@@ -18,6 +18,7 @@ body {
 	font-family: "neue-haas-grotesk-text",-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: #030014;
 }
 
 a:hover {
@@ -32,19 +33,48 @@ a:hover {
 	border-bottom-right-radius: 2.4rem;
 }
 
+#particles-js {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 0rem 2rem;
+	margin: 0 auto;
+}
+
 .nav-container {
+	z-index: 100;
 	margin: 0 auto;
 	position: absolute;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-    justify-content: center;
+	justify-content: space-between;
 	width: 100%;
-	padding: 2rem 2rem 0;
+	padding: 2rem 4rem 0;
 }
 
-.nav {
-	z-index: 100;
+.nav-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nav-logo a {
+	text-decoration: none;
+	color: #fff;
+	margin: 0;
+	display: flex;
+	pointer-events: all;
+	white-space: nowrap;
+	align-items: center;
+	height: 2.8rem;
+	justify-content: center;
+	padding: 0 0.8rem;
+	font-weight: 500;
+	font-size: 1rem;
+}
+
+.nav, .language-switch {
     display: flex;
     overflow: hidden;
     position: relative;
@@ -57,7 +87,7 @@ a:hover {
     font-size: 1rem;
 }
 
-.nav a {
+.nav a, .language-switch span {
 	text-decoration: none;
 	color: #fff;
 	margin: 0;
@@ -71,7 +101,11 @@ a:hover {
     padding: 0 0.8rem;
 }
 
-.nav a:hover {
+.language-switch-button:hover {
+	cursor: pointer;
+}
+
+a:hover {
 	color: #9fa2b9;
 	transition: 0.2s ease-in-out;
 }
@@ -83,6 +117,8 @@ a:hover {
 	height: 100%;
 	padding: 2rem;
 	gap: 1.5rem;
+	position: relative;
+	z-index: 1;
 }
 
 .hero-content {
@@ -101,7 +137,7 @@ a:hover {
     justify-content: center;
     overflow: hidden;
     min-height: 2rem;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     border: none;
     border-radius: 1rem;
     border-radius: 24px;
@@ -112,9 +148,7 @@ a:hover {
     white-space: nowrap;
     cursor: pointer;
     transition: .4s;
-    font-family: var(--font-family-base);
-    font-size: .85rem;
-	width: 20%;
+    font-size: 1rem;
 }
 
 .hero-button:hover {
@@ -126,13 +160,16 @@ h1 {
 	font-weight: 500;
     font-size: 3rem;
 	background: radial-gradient(45% 100% at 50% 50%,#fff 30%,hsla(0,0%,100%,.35) 100%);
+	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
 p {
-	font-weight: 400;
-    font-size: .9rem;
+	font-weight: 500;
+    font-size: 1rem;
+	margin: 0;
+	padding: 0 1.5rem;
 }
 
 #canvasContainer{
@@ -158,7 +195,9 @@ main {
 
 #heroCanvas {
 	width: 100%;
-	overflow: hidden;	
+	overflow: hidden;
+	user-select: none;
+	animation: fadeIn 2s linear;
 }
 
 .projects-container {
@@ -243,6 +282,19 @@ main {
 	line-height: 0.75;
 	padding: 0.5rem 0.75rem;
 	font-size: 0.85rem;
+}
+
+.hidden {
+	display: none;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 @media screen and (min-width: 33em) {

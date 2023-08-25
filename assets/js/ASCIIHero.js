@@ -1,15 +1,18 @@
 import * as THREE from "https://unpkg.com/three@0.136.0/build/three.module.js";
 import { AsciiEffect } from 'https://threejs.org/examples/jsm/effects/AsciiEffect.js';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js';
+import { OBJLoader } from 'https://cdn.jsdelivr.net/npm/three-object-mtl-loader@1.0.2/loaders/OBJLoader.js';
 
 const scene = new THREE.Scene();
 
-const geometry = new THREE.SphereGeometry(5, 100, 100);
-const material = new THREE.MeshLambertMaterial({ 
-    color: "#00ff83",
-});
-const mesh = new THREE.Mesh(geometry, material);
-scene.add(mesh);
+const objLoader = new OBJLoader(THREE);
+objLoader.load(
+    'assets/misc/objs/Moon.obj',
+    obj => scene.add(obj),
+    xhr => {
+        console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+    }
+);
 
 //sizes
 const sizes = {
@@ -19,12 +22,12 @@ const sizes = {
 
 //light
 const light = new THREE.HemisphereLight(0xffffff, 0x000000, 1);
-light.position.set(0, 10, 10);
+light.position.set(0, 15, 15);
 scene.add(light);
 
 //Camera
-const camera = new THREE.PerspectiveCamera(45, sizes.width/sizes.height, 0.1, 100);
-camera.position.z = 20;
+const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100);
+camera.position.z = 3;
 scene.add(camera);
 
 //Renderer
@@ -33,7 +36,7 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.setSize(sizes.width, sizes.height);
 
-const effect = new AsciiEffect( renderer, ' .:-+*=%@#', { invert: true } );
+const effect = new AsciiEffect(renderer, ' .:-+*=%@#', { invert: true });
 effect.setSize(sizes.width, sizes.height);
 effect.domElement.style.color = 'white';
 canvas.appendChild(effect.domElement);
@@ -43,6 +46,7 @@ effect.render(scene, camera);
 const controls = new OrbitControls(camera, effect.domElement);
 controls.enableDamping = true;
 controls.autoRotate = true;
+controls.autoRotateSpeed = 20;
 controls.enablePan = false;
 controls.enableZoom = false;
 
@@ -53,7 +57,7 @@ window.addEventListener('resize', () => {
     sizes.height = window.innerHeight * 0.5;
 
     //Update camera
-    camera.aspect = sizes.width/sizes.height;
+    camera.aspect = sizes.width / sizes.height;
     camera.updateProjectionMatrix();
 
     //Update renderer

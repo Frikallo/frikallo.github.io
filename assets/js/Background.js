@@ -281,3 +281,6 @@ class Sketch {
 new Sketch({
     dom: document.getElementById("canvasContainer")
 });
+
+// Set up stars for hero background
+particlesJS.load("particles-js", 'assets/misc/particles.json');
