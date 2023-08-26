@@ -75,6 +75,10 @@ a:hover {
 	transition: 0.2s ease-in-out;
 }
 
+svg {
+	fill: var(--color-text);
+}
+
 #particles-js {
 	position: absolute;
 	width: 100%;
@@ -292,6 +296,22 @@ a:hover {
 	border-radius: 1.6rem;
 	background: var(--color-bg);
 	padding: 4rem 2rem;
+}
+
+.about-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.about-content p {
+	padding: 1rem 1.5rem;	
+}
+
+.about-info {
+	padding: 0 1.5rem 1rem;
+	margin-top: auto;
 }
 
 .about-skills {

@@ -23,6 +23,10 @@
         <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="icon" href="/assets/favicon.png">
         <link rel="apple-touch-icon" href="/assets/favicon.png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js" integrity="sha512-9jr6up7aOKJkN7JmtsxSdU+QibDjV6m6gL+I76JdpX1qQy8Y5nxAWVjvKMaBkETDC3TP3V2zvIk+zG7734WqPA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body>
         <div id="particles-js"></div>
@@ -57,7 +61,7 @@
                 </a>
             </nav>
             <div class="language-switch">
-                <span class="language-switch-button">🇨🇦</span>
+                <span class="language-switch-button">🇺🇸</span>
             </div>
         </header>
 		<main>
@@ -97,9 +101,40 @@
                             <span id="FR">Salut👋 Je suis Noah</span>
                         </h2>
                         <p>
-                            <span id="EN">lorem itsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</span>
-                            <span id="FR">lorem itsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</span>
+                            <span id="EN">I'm a developer and designer based in Vancouver, Canada.<br>I'm currently studying Computer Science on my own time at home and have been improving my skills through tinkering for almost 4 years.<br>I'm passionate about building products that make a difference.</span>
+                            <span id="FR">Je suis un développeur et designer basé à Vancouver, Canada.<br>Je suis actuellement en train d'étudier l'informatique à la maison et j'ai amélioré mes compétences en bricolant pendant près de 4 ans.<br>Je suis passionné par la création de produits qui font une différence.</span>
                         </p>
+                        <div class="about-info">  
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path d="M1.75 16A1.75 1.75 0 0 1 0 14.25V1.75C0 .784.784 0 1.75 0h8.5C11.216 0 12 .784 12 1.75v12.5c0 .085-.006.168-.018.25h2.268a.25.25 0 0 0 .25-.25V8.285a.25.25 0 0 0-.111-.208l-1.055-.703a.749.749 0 1 1 .832-1.248l1.055.703c.487.325.779.871.779 1.456v5.965A1.75 1.75 0 0 1 14.25 16h-3.5a.766.766 0 0 1-.197-.026c-.099.017-.2.026-.303.026h-3a.75.75 0 0 1-.75-.75V14h-1v1.25a.75.75 0 0 1-.75.75Zm-.25-1.75c0 .138.112.25.25.25H4v-1.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 .75.75v1.25h2.25a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM3.75 6h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5ZM3 3.75A.75.75 0 0 1 3.75 3h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 3 3.75Zm4 3A.75.75 0 0 1 7.75 6h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 7 6.75ZM7.75 3h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5ZM3 9.75A.75.75 0 0 1 3.75 9h.5a.75.75 0 0 1 0 1.5h-.5A.75.75 0 0 1 3 9.75ZM7.75 9h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1 0-1.5Z">
+                                    </path>
+                                </svg> 
+                                <span id="EN">Available!</span>
+                                <span id="FR">Disponible!</span>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z">
+                                    </path>
+                                </svg> 
+                                Vancouver, Canada
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5a.75.75 0 0 1 1.5 0Z">
+                                    </path>
+                                </svg>
+                                <span class="time"> --:-- XX</span>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path d="M1.75 1h8.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 10.25 10H7.061l-2.574 2.573A1.458 1.458 0 0 1 2 11.543V10h-.25A1.75 1.75 0 0 1 0 8.25v-5.5C0 1.784.784 1 1.75 1ZM1.5 2.75v5.5c0 .138.112.25.25.25h1a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h3.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25Zm13 2a.25.25 0 0 0-.25-.25h-.5a.75.75 0 0 1 0-1.5h.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 14.25 12H14v1.543a1.458 1.458 0 0 1-2.487 1.03L9.22 12.28a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l2.22 2.22v-2.19a.75.75 0 0 1 .75-.75h1a.25.25 0 0 0 .25-.25Z">
+                                    </path>
+                                </svg>
+                                 🇺🇸 <sub>C2</sub> / 🇫🇷 <sub>C1</sub> / 🇩🇪 <sub>A1</sub>
+                            </div>
+                        </div>
                     </div>
                     <div class="about-skills">
                         <div class="about-skills-content">
@@ -108,24 +143,34 @@
                                 <span id="FR">Compétences</span>
                             </h2>
                             <div class="tags">
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">TypeScript</span>
-                                <span class="tag">React</span>
-                                <span class="tag">Node.js</span>
-                                <span class="tag">Express</span>
-                                <span class="tag">MongoDB</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">Java</span>
-                                <span class="tag">C</span>
-                                <span class="tag">C++</span>
-                                <span class="tag">C#</span>
-                                <span class="tag">Unity</span>
-                                <span class="tag">Blender</span>
-                                <span class="tag">Photoshop</span>
-                                <span class="tag">Illustrator</span>
-                                <span class="tag">Figma</span>
+                                <span class="tag">
+                                    <span id="EN">Full Stack Development</span>
+                                    <span id="FR">Développement Full Stack</span>
+                                </span>
+                                <span class="tag">
+                                    <span id="EN">Back-end Development</span>
+                                    <span id="FR">Développement Back-end</span>
+                                </span>
+                                <span class="tag">
+                                    <span id="EN">Web Development</span>
+                                    <span id="FR">Développement Web</span>
+                                </span>
+                                <span class="tag">
+                                    <span id="EN">Machine Learning</span>
+                                    <span id="FR">L'apprentissage automatique</span>
+                                </span>
+                                <span class="tag">
+                                    <span id="EN">Data Science</span>
+                                    <span id="FR">Science des données</span>
+                                </span>
+                                <span class="tag">
+                                    <span id="EN">UI/UX Design</span>
+                                    <span id="FR">Design UI/UX</span>
+                                </span>
+                                <span class="tag">
+                                    <span id="EN">Digital Marketing</span>
+                                    <span id="FR">Marketing</span>
+                                </span>
                             </div>
                         </div>
                         <div class="about-skills-content">
@@ -133,6 +178,28 @@
                                 <span id="EN">Languages/Tools</span>
                                 <span id="FR">Langues/Outils</span>
                             </h2>
+                            <div class="tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Go</span>
+                                <span class="tag">Java</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Next.js</span>
+                                <span class="tag">Three.js</span>
+                                <span class="tag">Visual Studio Code</span>
+                                <span class="tag">Git</span>
+                                <span class="tag">Github</span>
+                                <span class="tag">Pytorch</span>
+                                <span class="tag">Numpy</span>
+                                <span class="tag">Pandas</span>
+                                <span class="tag">Matplotlib</span>
+                                <span class="tag">Flask</span>
+                                <span class="tag">Django</span>
+                                <span class="tag">Microsoft Office</span>
+                            </div>                            
                         </div>
                     </div>
                 </div>
@@ -151,9 +218,14 @@
                         <path d="M4.75 7a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5zM5 4.75A.75.75 0 015.75 4h5.5a.75.75 0 010 1.5h-5.5A.75.75 0 015 4.75zM6.75 10a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5z"></path><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0114.25 16H1.75A1.75 1.75 0 010 14.25zm1.75-.25a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25z"> 
                         </path>
                     </svg>
-                    <span>Resume</span>
+                    <span>
+                        <span id="EN">Resume</span>
+                        <span id="FR">CV</span>
+                    </span>
                 </div>
-                <a class="maximize" href="/resume" target="_blank">Open in new tab 
+                <a class="maximize" href="/resume" target="_blank">
+                    <span id="EN">Open in new tab</span>
+                    <span id="FR">Ouvrir dans un nouvel page</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                         <path d="M10.5 3a.75.75 0 01.75.75v1h1a.75.75 0 010 1.5h-1v1a.75.75 0 01-1.5 0v-1h-1a.75.75 0 010-1.5h1v-1A.75.75 0 0110.5 3z">         
                         </path>
@@ -177,15 +249,6 @@
                 </div>                
             </div>
 		</main>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js" integrity="sha512-9jr6up7aOKJkN7JmtsxSdU+QibDjV6m6gL+I76JdpX1qQy8Y5nxAWVjvKMaBkETDC3TP3V2zvIk+zG7734WqPA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script type="module" crossorigin="anonymous" src="assets/js/Background.js"></script>
-        <script type="module" crossorigin="anonymous" src="assets/js/Projects.js"></script>
-        <script type="module" crossorigin="anonymous" src="assets/js/ASCIIHero.js"></script>
-        <script crossorigin="anonymous" src="assets/js/Build.js"></script>
-        <script crossorigin="anonymous" src="assets/js/LanguageSwitch.js"></script>
-        <script type="module" crossorigin="anonymous" src="assets/js/Utils.js"></script>
+        <script type="module" crossorigin="anonymous" src="assets/js/index.js"></script>
     </body>
 </html>
