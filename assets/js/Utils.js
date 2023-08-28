@@ -44,9 +44,19 @@ export function get_time() {
         timeZone: 'America/Vancouver',
         hour: 'numeric',
         minute: 'numeric',
+        hour12: true,
     },
     formatter = new Intl.DateTimeFormat([], options);
 
     let dom_time = document.querySelector('.time');
     dom_time.textContent = formatter.format(new Date());
+}
+
+
+export function scrollTo(element) {
+    window.scroll({
+        behavior: 'smooth',
+        left: 0,
+        top: element.offsetTop
+    });
 }

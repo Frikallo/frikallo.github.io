@@ -1,32 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
 :root {
 	font-size: 15px;
 	--color-text: #fff;
-	--color-bg: rgba(3, 0, 14, 0.5);
+	--color-bg: rgb(3, 0, 14);
 }
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *:focus {
-    outline: none;
+	outline: none;
 }
 
 body {
 	margin: 0;
 	color: var(--color-text);
-	font-family: "neue-haas-grotesk-text",-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #030014;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	font-family: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
 }
 
 h1 {
 	font-weight: 500;
-    font-size: 3rem;
-	background: radial-gradient(45% 100% at 50% 50%,#fff 30%,hsla(0,0%,100%,.35) 100%);
+	font-size: 3rem;
+	background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -37,7 +39,7 @@ a h1 {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-} 
+}
 
 a h1::after {
 	content: '';
@@ -55,7 +57,7 @@ h2 {
 
 p {
 	font-weight: 500;
-    font-size: 1rem;
+	font-size: 1rem;
 	margin: 0;
 	padding: 0 1.5rem;
 }
@@ -63,7 +65,7 @@ p {
 main {
 	padding: 0rem 2rem;
 	margin: 0 auto;
-    height: 100vh;
+	height: 100vh;
 }
 
 footer {
@@ -88,6 +90,7 @@ a:hover {
 
 svg {
 	fill: var(--color-text);
+	font-family: 'Times New Roman', Times, serif;
 }
 
 .preloader {
@@ -99,6 +102,14 @@ svg {
 	height: 100%;
 	background: #030014;
 	transition: opacity 0.5s ease-in-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.preloader h2 {
+	font-size: 2.5rem;
+	font-weight: 500;
 }
 
 #particles-js {
@@ -113,7 +124,7 @@ svg {
 
 .hero-container {
 	height: 100%;
-    background: radial-gradient(140% 107.13% at 50% 10%,transparent 37.41%,#63e 69.27%,#fff 100%);
+	background: radial-gradient(140% 107.13% at 50% 10%, transparent 37.41%, #63e 69.27%, #fff 100%);
 	background-color: #030014;
 	border-bottom-left-radius: 2.4rem;
 	border-bottom-right-radius: 2.4rem;
@@ -152,31 +163,83 @@ svg {
 	font-size: 1rem;
 }
 
-.nav, .language-switch {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    align-items: center;
-    pointer-events: all;
-    padding: 0 0.4rem;
-    border-radius: 1.6rem;
-    background: rgba(1,3,20,.95);
-    border: 1px solid hsla(0,0%,100%,.2);
-    font-size: 1rem;
+.nav,
+.language-switch {
+	display: flex;
+	overflow: hidden;
+	position: relative;
+	align-items: center;
+	pointer-events: all;
+	padding: 0 0.4rem;
+	border-radius: 1.6rem;
+	background: rgba(1, 3, 20, .95);
+	border: 1px solid hsla(0, 0%, 100%, .2);
+	font-size: 1rem;
 }
 
-.nav a, .language-switch span {
+.nav {
+	position: fixed;
+	top: 2rem;
+	left: calc(50% - 13.5rem);
+	transition: 0.2s ease-in-out;
+}
+
+.nav-cover {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	left: 1px;
+	margin: auto;
+	border-radius: 1.6rem;
+	z-index: 0;
+	-webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+	background: rgba(1, 3, 20, .95);
+}
+
+.nav {
+	transition: opacity .3s linear;
+}
+
+.nav:before {
+	opacity: var(--nav_opacity);
+	top: -800%;
+	right: -800%;
+	bottom: -800%;
+	left: -800%;
+	content: "";
+	position: absolute;
+	background-image: conic-gradient(#c77dff, #9d4edd 20%, #7b2cbf 50%, #5a189a 75%, #e0aaff 100%);
+	animation: backgroundGradientSpin 5s linear infinite;
+	z-index: -1;
+	transition: opacity .3s linear;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.nav a,
+.language-switch span {
 	text-decoration: none;
 	color: #fff;
 	margin: 0;
-    display: flex;
-    pointer-events: all;
-    white-space: nowrap;
-    align-items: center;
-    gap: 1rem;
-    height: 2.8rem;
-    justify-content: center;
-    padding: 0 0.8rem;
+	display: flex;
+	pointer-events: all;
+	white-space: nowrap;
+	align-items: center;
+	gap: 1rem;
+	height: 2.8rem;
+	justify-content: center;
+	padding: 0 0.8rem;
+	z-index: 1;
 }
 
 .nav a:hover {
@@ -216,58 +279,58 @@ svg {
 }
 
 .HeroBanner_button_projects {
-    padding: 1px;
-    display: inline-block;
-    overflow: hidden;
-    position: relative;
-    align-items: center;
-    border-radius: 1.6rem;
-    -webkit-text-decoration: none;
-    text-decoration: none;
-    justify-content: center;
-    transform: translateZ(0);
-    cursor: pointer;
-    font-size: .8rem;
-    margin-bottom: 1.2rem;
-    transition: opacity .3s;
+	padding: 1px;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	align-items: center;
+	border-radius: 1.6rem;
+	-webkit-text-decoration: none;
+	text-decoration: none;
+	justify-content: center;
+	transform: translateZ(0);
+	cursor: pointer;
+	font-size: .8rem;
+	margin-bottom: 1.2rem;
+	transition: opacity .3s;
 }
 
 .HeroBanner_button_projects:before {
-    top: -800%;
-    right: -800%;
-    bottom: -800%;
-    left: -800%;
-    content: "";
-    opacity: .75;
-    position: absolute;
-    background-image: conic-gradient(#c77dff,#9d4edd 20%,#7b2cbf 50%,#5a189a 75%,#e0aaff 100%);
-    animation: backgroundGradientSpin 5s linear infinite;
-    transition: opacity .25s;
+	top: -800%;
+	right: -800%;
+	bottom: -800%;
+	left: -800%;
+	content: "";
+	opacity: .75;
+	position: absolute;
+	background-image: conic-gradient(#c77dff, #9d4edd 20%, #7b2cbf 50%, #5a189a 75%, #e0aaff 100%);
+	animation: backgroundGradientSpin 5s linear infinite;
+	transition: opacity .25s;
 }
 
 .HeroBanner_button_projects .HeroBanner_button_projects_inner {
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
-    background: #171825;
+	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
+	background: #171825;
 }
 
 .HeroBanner_button_projects:hover:before {
-    opacity: 1
+	opacity: 1
 }
 
 .HeroBanner_button_projects_inner {
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    color: #fff;
-    font-weight: 500;
-    position: relative;
-    border-radius: 1.6rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: all .2s;
-    padding: 0.2rem 1.6rem;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-weight: 500;
+	position: relative;
+	border-radius: 1.6rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: all .2s;
+	padding: 0.2rem 1.6rem;
 	font-size: 1rem;
 }
 
@@ -292,16 +355,16 @@ svg {
 }
 
 .HeroBanner_button_contact_inner {
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    color: #fff;
-    font-weight: 500;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.2rem 0 0.2rem 0.6rem;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-weight: 500;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.2rem 0 0.2rem 0.6rem;
 	font-size: 1rem;
 }
 
@@ -328,11 +391,14 @@ svg {
 }
 
 .about-content p {
-	padding: 1rem 1.5rem;	
+	padding: 1rem 1.5rem;
 }
 
 .about-info {
+	display: flex;
+	flex-direction: column;
 	padding: 0 1.5rem 1rem;
+	gap: 0.3rem;
 	margin-top: auto;
 }
 
@@ -353,6 +419,15 @@ svg {
 	border: 1px solid #2a2b3a;
 }
 
+#aboutCanvas {
+	width: 100%;
+	height: auto;
+	padding: 8rem 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .projects-container {
 	max-width: 1400px;
 	margin: 0 auto;
@@ -362,8 +437,9 @@ svg {
 	display: grid;
 	margin: 10vh 0;
 	grid-template-columns: 1fr;
+	border: 1px solid #2a2b3a;
+	background: #2a2b3a;
 	gap: 1px;
-    border-radius: 10px;
 }
 
 .grid__item {
@@ -373,8 +449,6 @@ svg {
 	background: var(--color-bg);
 	align-content: start;
 	grid-template-rows: auto 1fr auto;
-    border-radius: 10px;
-	border: 1px solid #2a2b3a;
 }
 
 .grid__item-img {
@@ -385,7 +459,7 @@ svg {
 	overflow: hidden;
 	display: grid;
 	place-items: center;
-	--x: 0px; 
+	--x: 0px;
 	--y: 0px;
 }
 
@@ -396,7 +470,7 @@ svg {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: radial-gradient(rgba(23, 24, 37, 0.5) 40%, rgb(102, 51, 238) 50%, rgb(142, 100, 255), rgb(249, 38, 114));
+	background: radial-gradient(rgb(23, 24, 37) 40%, rgb(102, 51, 238) 50%, rgb(142, 100, 255), rgb(249, 38, 114));
 	mix-blend-mode: darken;
 }
 
@@ -412,13 +486,13 @@ svg {
 	line-height: 1.15;
 	color: #fff;
 	opacity: 0;
-	-webkit-mask-image: radial-gradient(300px circle at var(--x) var(--y),black 20%,rgba(0,0,0,0.25),transparent);
-	mask-image: radial-gradient(300px circle at var(--x) var(--y),black 20%,rgba(0,0,0,0.25),transparent);
+	-webkit-mask-image: radial-gradient(300px circle at var(--x) var(--y), black 20%, rgba(0, 0, 0, 0.25), transparent);
+	mask-image: radial-gradient(300px circle at var(--x) var(--y), black 20%, rgba(0, 0, 0, 0.25), transparent);
 }
 
 .grid__item-img img {
-	width: 100%;
-	max-width: 400px;
+	width: 90%;
+	height: 90%;
 	position: relative;
 	z-index: 1;
 }
@@ -443,25 +517,26 @@ svg {
 	width: 100%;
 	margin: 0 auto;
 	padding: 2rem;
-    background-color: var(--color-bg);
+	background-color: var(--color-bg);
 	border: 1px solid #2a2b3a;
 	border-radius: 1.6rem;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 	border-bottom: none;
-    color: var(--color-text);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	color: var(--color-text);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	font-size: 1rem;
 }
+
 .header svg {
 	width: 1rem;
 	height: 1rem;
 	fill: var(--color-text);
 }
 
-.resume-container {
+.resume {
 	max-width: 1400px;
 	margin: 0 auto;
 	border: 1px solid #2a2b3a;
@@ -477,15 +552,18 @@ svg {
 	justify-content: center;
 }
 
-.resume-container canvas {
+.resume canvas {
 	max-width: 918px;
-	height: 100vh;
-	width: calc(100vh / 1.414);
+	height: 95vh;
+	width: calc(95vh / 1.294);
 	padding: 4rem;
 	border-radius: 4.5rem;
 }
 
-.maximize {transition: 0.2s ease-in-out;}
+.maximize {
+	transition: 0.2s ease-in-out;
+}
+
 .maximize:hover {
 	cursor: pointer;
 	color: #fff;
@@ -493,40 +571,40 @@ svg {
 }
 
 .contact-container {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    max-width: 1400px;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	max-width: 1400px;
 	width: 100%;
-    margin: 0 auto;
-    padding: 4rem 0;
-    gap: 4rem;
+	margin: 0 auto;
+	padding: 4rem 0;
+	gap: 4rem;
 }
 
 .contact-info h2,
 .social-media h2 {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .contact-info p {
 	padding: 0;
-    margin-top: 1rem;
+	margin-top: 1rem;
 }
 
 .contact-info form {
-    margin-top: 2rem;
-    display: grid;
-    gap: 1rem;
+	margin-top: 2rem;
+	display: grid;
+	gap: 1rem;
 	font-size: 1rem;
 	font-weight: 500;
 }
 
 .contact-info input,
 .contact-info textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid #2a2b3a;
-    border-radius: 0.5rem;
+	width: 100%;
+	padding: 1rem;
+	border: 1px solid #2a2b3a;
+	border-radius: 0.5rem;
 	font-size: 1rem;
 	font-weight: 500;
 }
@@ -537,12 +615,12 @@ svg {
 }
 
 .contact-info button {
-    padding: 1rem 2rem;
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    border: 1px solid #2a2b3a;
-    border-radius: 0.5rem;
-    cursor: pointer;
+	padding: 1rem 2rem;
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	border: 1px solid #2a2b3a;
+	border-radius: 0.5rem;
+	cursor: pointer;
 	transition: 0.2s ease-in-out;
 }
 
@@ -576,24 +654,48 @@ svg {
 	height: 2.5rem;
 }
 
+.animate-on-scroll {
+	opacity: 0;
+	transition: 1s ease-in-out;
+}
+
+.animate-on-scroll.animate {
+	opacity: 1;
+}
+
 .hidden {
 	display: none;
 }
 
-@keyframes backgroundGradientSpin {
-    0% {
-        transform: rotate(0deg)
-    }
+@keyframes opacityBreathing {
+	0% {
+		opacity: 0.5;
+	}
 
-    to {
-        transform: rotate(1turn)
-    }
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0.5;
+	}
+}
+
+@keyframes backgroundGradientSpin {
+	0% {
+		transform: rotate(0deg)
+	}
+
+	to {
+		transform: rotate(1turn)
+	}
 }
 
 @keyframes fadeIn {
 	from {
 		opacity: 0;
 	}
+
 	to {
 		opacity: 1;
 	}
@@ -601,7 +703,7 @@ svg {
 
 @media screen and (min-width: 33em) {
 	.projects-grid {
-		grid-template-columns: repeat(2,1fr);
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -614,10 +716,12 @@ svg {
 		justify-items: start;
 		grid-row-gap: 1.5rem;
 	}
+
 	.projects-grid {
-		grid-template-columns: repeat(3,1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
+
 	body #cdawrap {
-	    justify-self: end;
+		justify-self: end;
 	}
 }

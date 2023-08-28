@@ -1,23 +1,49 @@
 import { switchButton, updateLanguage } from "./LanguageSwitch.js";
-import { createScene, createLight, createCamera, createRenderer, setupControls, onWindowResize, tick } from "./ASCIIHero.js";
-import { addProject, loadPdf, get_time } from "./Utils.js";
+import { 
+    createOBJScene,
+    createGLTFScene,
+    createLight, 
+    createCamera, 
+    createRenderer,
+    createASCIIRenderer, 
+    setupControls, 
+    onEffectWindowResize,
+    tick,
+    effectTick} from "./ASCIIHero.js";
+import { addProject, loadPdf, get_time, scrollTo } from "./Utils.js";
 import { Item } from './interactiveItemModule.js';
 
 // Set up timezone updater and start it for about section
 setInterval(get_time, 1000);
 
 // Set up hero
-const scene = createScene();
-const light = createLight();
-const camera = createCamera();
-const { renderer, effect } = createRenderer();
-const controls = setupControls(camera, effect.domElement);
-window.addEventListener('resize', () => onWindowResize(camera, renderer, effect));
+const sceneSize = {
+    width: 0.5,
+    height: 0.5
+};
+const scene = createOBJScene('assets/misc/objs/Moon.obj');
+const light = createLight(0, 15, 15);
+const camera = createCamera(sceneSize['width'], sceneSize['height'], 3);
+const { renderer, effect } = createASCIIRenderer(sceneSize['width'], sceneSize['height'], 'heroCanvas');
+const controls = setupControls(camera, effect.domElement, 10);
+window.addEventListener('resize', () => onEffectWindowResize(sceneSize['width'], sceneSize['height'], camera, renderer, effect));
 
 scene.add(light);
 scene.add(camera);
 
-tick(controls, effect, scene, camera);
+effectTick(controls, effect, scene, camera);
+
+/*const aboutScene = createGLTFScene('assets/misc/gltfs/desktop_pc/scene.gltf');
+aboutScene.background = null;
+const aboutLight = createLight(0, 0, 0);
+const aboutCamera = createCamera(1, 0.5, 15);
+const aboutRenderer = createRenderer(1, 0.5, 'aboutCanvas');
+const aboutControls = setupControls(aboutCamera, document.getElementById('aboutCanvas'), 5);
+
+aboutScene.add(aboutLight);
+aboutScene.add(aboutCamera);
+
+tick(aboutControls, aboutRenderer.renderer, aboutScene, aboutCamera);*/
 
 // Create stars for hero background with particles.js
 particlesJS.load("particles-js", 'assets/misc/particles.json');
@@ -76,7 +102,23 @@ for (const match of matches) {
 }
 
 // Load resume pdf
-loadPdf('assets/pdf/resume.pdf', document.querySelector('.resume-container'));
+loadPdf('assets/pdf/resume.pdf', document.querySelector('.resume'));
+
+// Add on-scroll animations
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+        } else {
+            entry.target.classList.remove('animate');
+        }
+    });
+});
+
+const elements = document.querySelectorAll('.animate-on-scroll');
+elements.forEach(element => {
+    observer.observe(element);
+});
 
 // Set up language switcher
 switchButton.addEventListener('click', () => {
@@ -86,3 +128,47 @@ switchButton.addEventListener('click', () => {
     updateLanguage(newLanguage);
 });
 updateLanguage('🇺🇸');
+
+// Set up scroll to section buttons
+document.querySelectorAll('.home-button').forEach(item => {
+    item.addEventListener('click', event => {
+        scrollTo(document.querySelector('.nav-container'));
+    });
+});
+
+document.querySelectorAll('.about-button').forEach(item => {
+    item.addEventListener('click', event => {
+        scrollTo(document.querySelector('.about-container'));
+    });
+});
+
+document.querySelectorAll('.projects-button').forEach(item => {
+    item.addEventListener('click', event => {
+        scrollTo(document.querySelector('.projects-container'));
+    });
+});
+
+document.querySelectorAll('.resume-button').forEach(item => {
+    item.addEventListener('click', event => {
+        scrollTo(document.querySelector('.resume-container'));
+    });
+});
+
+document.querySelectorAll('.contact-button').forEach(item => {
+    item.addEventListener('click', event => {
+        scrollTo(document.querySelector('.contact-container'));
+    });
+});
+
+// Set up sticky navbar
+window.onscroll = function() {stickyNavbar()};
+var navbar = document.querySelector('.nav');
+var sticky = navbar.offsetTop;
+function stickyNavbar() {
+    if (window.scrollY >= sticky) {
+        navbar.style.setProperty('--nav_opacity', 1);
+    } else {
+        navbar.style.setProperty('--nav_opacity', 0);
+    };
+}
+stickyNavbar();
