@@ -66,7 +66,7 @@ export const createCamera = (widthRatio, heightRatio, camera_zOffset) => {
     };
     
     const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100);
-    camera.setViewOffset( sizes.width, sizes.height, 55, 10, sizes.width, sizes.height ); // Set camera offset for ASCII effect (very specific)
+    camera.setViewOffset( sizes.width, sizes.height, 50, 10, sizes.width, sizes.height ); // Set camera offset for ASCII effect (very specific)
     camera.position.z = camera_zOffset;
     return camera;
 };
@@ -83,7 +83,7 @@ export const createASCIIRenderer = (widthRatio, heightRatio, canvasDOM) => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(sizes.width, sizes.height);
 
-    const effect = new AsciiEffect(renderer, ' .:-+*=%@#', { scale: 1.01, resolution: 0.25, invert: true });
+    const effect = new AsciiEffect(renderer, ' :-+*=%@#', { scale: 1.01, resolution: 0.25, invert: true });
     effect.setSize(sizes.width, sizes.height);
     effect.domElement.style.color = 'white';
     canvas.appendChild(effect.domElement);
