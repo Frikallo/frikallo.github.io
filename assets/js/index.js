@@ -1,4 +1,3 @@
-import { switchButton, updateLanguage } from "./LanguageSwitch.js";
 import { 
     createOBJScene,
     createGLTFScene,
@@ -10,7 +9,7 @@ import {
     onEffectWindowResize,
     tick,
     effectTick} from "./ASCIIHero.js";
-import { addProject, loadPdf, get_time, scrollTo } from "./Utils.js";
+import { addProject, loadPdf, get_time, scrollTo, updateLanguage } from "./Utils.js";
 import { Item } from './interactiveItemModule.js';
 
 // Set up timezone updater and start it for about section
@@ -121,11 +120,14 @@ elements.forEach(element => {
 });
 
 // Set up language switcher
-switchButton.addEventListener('click', () => {
-    let curLanguage = document.querySelector('.language-switch-button').textContent;
-    let newLanguage = curLanguage === '🇺🇸' ? '🇫🇷' : '🇺🇸';
-    document.querySelector('.language-switch-button').textContent = newLanguage;
-    updateLanguage(newLanguage);
+const switchButtons = document.querySelectorAll('.language-switch-button');
+switchButtons.forEach(switchButton => {
+    switchButton.addEventListener('click', () => {
+        let curLanguage = switchButton.textContent;
+        let newLanguage = curLanguage === '🇺🇸' ? '🇫🇷' : '🇺🇸';
+        switchButton.textContent = newLanguage;
+        updateLanguage(newLanguage);
+    });
 });
 updateLanguage('🇺🇸');
 
@@ -172,3 +174,15 @@ function stickyNavbar() {
     };
 }
 stickyNavbar();
+
+const hamburger = document.querySelector('.hamburger');
+const hamburgerInner = document.querySelector('.hamburger-inner');
+hamburger.addEventListener('click', () => {
+    if (hamburgerInner.style.opacity == 1) {
+        hamburgerInner.style.pointerEvents = 'none';
+        hamburgerInner.style.opacity = 0;
+    } else {
+        hamburgerInner.style.pointerEvents = 'all';
+        hamburgerInner.style.opacity = 1;
+    }
+});

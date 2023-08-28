@@ -83,7 +83,7 @@ export const createASCIIRenderer = (widthRatio, heightRatio, canvasDOM) => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     renderer.setSize(sizes.width, sizes.height);
 
-    const effect = new AsciiEffect(renderer, ' :-+*=%@#', { scale: 1.01, resolution: 0.25, invert: true });
+    const effect = new AsciiEffect(renderer, ' .:-+*=%@#', { scale: 1.01, resolution: 0.25, invert: true });
     effect.setSize(sizes.width, sizes.height);
     effect.domElement.style.color = 'white';
     canvas.appendChild(effect.domElement);
