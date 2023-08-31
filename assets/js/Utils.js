@@ -14,9 +14,9 @@ export function addProject(name, img, descEN, descFR, tag, link) {
     grid.innerHTML = result + grid.innerHTML;
 }
 
-export function addBlogLink(imgLink, titleEG, titleFR, descEN, descFR, date, tag1, tag2, tag3) {
+export function addBlogLink(imgLink, blogLink, titleEG, titleFR, descEN, descFR, date, tag1, tag2, tag3) {
     const template = `<div class="blog-item">
-    <a class="blog-maximize" href="assets/pdf/resume.pdf" target="_blank">
+    <a class="blog-maximize" href="BLOGLINK" target="_blank">
         <img class="blog-thumbnail" src="IMG" alt=""/>
     </a>
     <p class="blog-title">
@@ -34,7 +34,7 @@ export function addBlogLink(imgLink, titleEG, titleFR, descEN, descFR, date, tag
         <span class="tag">TAG3</span>
     </p>
     </div>`
-    let result = template.replace(/IMG/g, imgLink).replace(/TITLE-EG/g, titleEG).replace(/TITLE-FR/g, titleFR).replace(/DESC-EN/g, descEN).replace(/DESC-FR/g, descFR).replace(/DATE/g, date).replace(/TAG1/g, tag1).replace(/TAG2/g, tag2).replace(/TAG3/g, tag3);
+    let result = template.replace(/IMG/g, imgLink).replace(/BLOGLINK/g, blogLink).replace(/TITLE-EG/g, titleEG).replace(/TITLE-FR/g, titleFR).replace(/DESC-EN/g, descEN).replace(/DESC-FR/g, descFR).replace(/DATE/g, date).replace(/TAG1/g, tag1).replace(/TAG2/g, tag2).replace(/TAG3/g, tag3);
     const carrossel = document.querySelector('.blog-carrossel');
     carrossel.innerHTML = result + carrossel.innerHTML;
 }

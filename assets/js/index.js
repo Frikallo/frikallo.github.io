@@ -93,7 +93,8 @@ addProject('MISST',
 );
 
 for (let i=0; i<=10; i++) {
-    addBlogLink(`https://picsum.photos/id/${i+50}/200/200`, 
+    addBlogLink(`assets/img/blog/no-image.png`, 
+                'https://frikallo.github.io',
                 'Title',
                 'Title',
                 'Description', 
