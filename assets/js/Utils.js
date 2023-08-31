@@ -14,6 +14,31 @@ export function addProject(name, img, descEN, descFR, tag, link) {
     grid.innerHTML = result + grid.innerHTML;
 }
 
+export function addBlogLink(imgLink, titleEG, titleFR, descEN, descFR, date, tag1, tag2, tag3) {
+    const template = `<div class="blog-item">
+    <a class="blog-maximize" href="assets/pdf/resume.pdf" target="_blank">
+        <img class="blog-thumbnail" src="IMG" alt=""/>
+    </a>
+    <p class="blog-title">
+        <span id="EN">TITLE-EG</span>
+        <span id="FR">TITLE-FR</span>
+        <span class="blog-date">DATE</span>
+    </p>
+    <p class="blog-description">
+        <span id="EN">DESC-EN</span>
+        <span id="FR">DESC-FR</span>
+    </p>
+    <p class="blog-tags">
+        <span class="tag">TAG1</span>
+        <span class="tag">TAG2</span>
+        <span class="tag">TAG3</span>
+    </p>
+    </div>`
+    let result = template.replace(/IMG/g, imgLink).replace(/TITLE-EG/g, titleEG).replace(/TITLE-FR/g, titleFR).replace(/DESC-EN/g, descEN).replace(/DESC-FR/g, descFR).replace(/DATE/g, date).replace(/TAG1/g, tag1).replace(/TAG2/g, tag2).replace(/TAG3/g, tag3);
+    const carrossel = document.querySelector('.blog-carrossel');
+    carrossel.innerHTML = result + carrossel.innerHTML;
+}
+
 export function loadPdf(pdfUrl, pdfContainer) {
     var pdfjsLib = window['pdfjs-dist/build/pdf'];
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.worker.min.js';

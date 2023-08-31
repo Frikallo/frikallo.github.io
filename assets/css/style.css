@@ -26,7 +26,7 @@ body {
 }
 
 h1 {
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 3rem;
 	background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
 	background-clip: text;
@@ -110,6 +110,8 @@ svg {
 .preloader h2 {
 	font-size: 2.5rem;
 	font-weight: 500;
+	display: flex;
+	align-items: center;
 }
 
 #particles-js {
@@ -505,6 +507,127 @@ svg {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.blog-container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 4rem 2rem 0;
+}
+
+.blog-carrossel {
+	overflow-y: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: grid;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    padding: 0;
+    margin: 0;
+    grid-gap: 1rem;
+    grid-auto-flow: column;
+    list-style: none;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+.blog-carrossel::-webkit-scrollbar {
+	display: none;
+}
+
+.blog-item {
+	display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    user-select: none;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--color-bg);
+    border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 8px);
+    cursor: pointer;
+	border: 1px solid #2a2b3a;
+	border-radius: 1.6rem;
+}
+
+.blog-item img {
+	aspect-ratio: 1/1;
+    width: 17rem;
+    height: 17rem;
+	user-drag: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    margin-bottom: 16px;
+    border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 4px);
+	padding-bottom: .5rem;
+	transition: 0.3s ease-in-out;
+}
+
+.blog-item img:hover {
+	cursor: pointer;
+}
+
+.blog-item img a {
+	color: rgba(255, 255, 255, 0);
+}
+
+.blog-title {
+	width: 100%;
+	display: flex;
+    justify-content: space-between;
+	gap: 1rem;
+}
+
+.blog-date {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: .8rem;
+	font-weight: 500;
+}
+
+.blog-description {
+	width: 100%;
+	font-size: 0.9rem;
+}
+
+.blog-tags {
+	width: 100%;
+	display: flex;
+    justify-content: space-between;
+	padding-top: 1rem;
+}
+
+.scroll-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.scroll-right-button,
+.scroll-left-button {
+	background: none;
+	border: none;
+}
+
+.scroll-right-button svg,
+.scroll-left-button svg {
+	width: 2.5rem;
+	height: 2.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem; 
+	padding-left: 0.5rem;
+	padding-right: 0.5rem; 
+	border-radius: 9999px;	
+	background: var(--color-bg);
+	border: 1px solid #2a2b3a;
+	fill: var(--color-text);
+	cursor: pointer;
 }
 
 .projects-container {

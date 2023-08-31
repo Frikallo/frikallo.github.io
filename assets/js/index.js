@@ -9,7 +9,7 @@ import {
     onEffectWindowResize,
     tick,
     effectTick} from "./ASCIIHero.js";
-import { addProject, loadPdf, get_time, scrollTo, updateLanguage } from "./Utils.js";
+import { addProject, addBlogLink, loadPdf, get_time, scrollTo, updateLanguage } from "./Utils.js";
 import { Item } from './interactiveItemModule.js';
 
 // Set up timezone updater and start it for about section
@@ -92,6 +92,19 @@ addProject('MISST',
             'https://github.com/Frikallo/MISST'
 );
 
+for (let i=0; i<=10; i++) {
+    addBlogLink(`https://picsum.photos/id/${i+50}/200/200`, 
+                'Title',
+                'Title',
+                'Description', 
+                'Description', 
+                '08/30/2023', 
+                '#Tag1', 
+                '#Tag2', 
+                '#Tag3'
+    );
+}
+
 // Get a NodeList of elements with class '.grid__item > .grid__item-img'
 const matches = document.querySelectorAll('.grid__item > .grid__item-img');
 
@@ -141,6 +154,12 @@ document.querySelectorAll('.home-button').forEach(item => {
 document.querySelectorAll('.about-button').forEach(item => {
     item.addEventListener('click', event => {
         scrollTo(document.querySelector('.about-container'));
+    });
+});
+
+document.querySelectorAll('.blog-button').forEach(item => {
+    item.addEventListener('click', event => {
+        scrollTo(document.querySelector('.blog-container'));
     });
 });
 
@@ -201,3 +220,50 @@ contactFormButton.addEventListener('click', () => {
 
     console.log(name, email, message);
 });
+
+// Set up blog carrossel
+const blogCarrossel = document.querySelector('.blog-carrossel');
+const leftArrow = document.querySelector('.scroll-left-button');
+const rightArrow = document.querySelector('.scroll-right-button');
+
+let x = 0;
+let mx = 0;
+
+rightArrow.addEventListener( 'click', function ( e ) {
+    x = blogCarrossel.clientWidth / 2 + blogCarrossel.scrollLeft + 0;
+    blogCarrossel.scroll( {
+        left: x,
+        behavior: 'smooth',
+    } );
+});
+
+leftArrow.addEventListener( 'click', function ( e ) {
+    x = blogCarrossel.clientWidth / 2 - blogCarrossel.scrollLeft + 0;
+    blogCarrossel.scroll( {
+        left: -x,
+        behavior: 'smooth',
+    } );
+});
+
+const mousemoveHandler = ( e ) => {
+    const mx2 = e.pageX - blogCarrossel.offsetLeft;
+    if ( mx > 0 ) {
+        blogCarrossel.scrollLeft = blogCarrossel.sx + mx - mx2;
+    }
+};
+
+const mousedownHandler = ( e ) => {
+    blogCarrossel.sx = blogCarrossel.scrollLeft;
+    mx = e.pageX - blogCarrossel.offsetLeft;
+    blogCarrossel.classList.add( 'dragging' );
+};
+
+const mouseupHandler = () => {
+    mx = 0;
+    blogCarrossel.classList.remove( 'dragging' );
+};
+
+blogCarrossel.addEventListener( 'mousemove', mousemoveHandler );
+blogCarrossel.addEventListener( 'mousedown', mousedownHandler );
+blogCarrossel.addEventListener( 'mouseup', mouseupHandler );
+blogCarrossel.addEventListener( 'mouseleave', mouseupHandler );
