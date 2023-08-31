@@ -225,9 +225,29 @@ contactFormButton.addEventListener('click', () => {
 const blogCarrossel = document.querySelector('.blog-carrossel');
 const leftArrow = document.querySelector('.scroll-left-button');
 const rightArrow = document.querySelector('.scroll-right-button');
+const leftSVG = document.querySelector('.scroll-left-button svg');
+const rightSVG = document.querySelector('.scroll-right-button svg');
 
 let x = 0;
 let mx = 0;
+
+function checkScrollBoundaries() {
+    if (blogCarrossel.scrollLeft <= 0) {
+        leftSVG.style.fill = '#808080';
+        leftArrow.style.pointerEvents = 'none';
+    } else {
+        leftSVG.style.fill = '#fff';
+        leftArrow.style.pointerEvents = 'all';
+    }
+    if (blogCarrossel.scrollLeft >= blogCarrossel.scrollWidth - blogCarrossel.clientWidth) {
+        rightSVG.style.fill = '#808080';
+        rightArrow.style.pointerEvents = 'none';
+    } else {
+        rightSVG.style.fill = '#fff';
+        rightArrow.style.pointerEvents = 'all';
+    }
+}
+setInterval(checkScrollBoundaries, 100);
 
 rightArrow.addEventListener( 'click', function ( e ) {
     x = blogCarrossel.clientWidth / 2 + blogCarrossel.scrollLeft + 0;
