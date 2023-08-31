@@ -66,7 +66,7 @@ export const createCamera = (widthRatio, heightRatio, camera_zOffset) => {
     };
     
     const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100);
-    camera.setViewOffset( sizes.width, sizes.height, 50, 10, sizes.width, sizes.height ); // Set camera offset for ASCII effect (very specific)
+    camera.setViewOffset( sizes.width, sizes.height, 25, -175, sizes.width, sizes.height ); // Set camera offset for ASCII effect (very specific)
     camera.position.z = camera_zOffset;
     return camera;
 };
@@ -112,6 +112,8 @@ export const setupControls = (camera, domElement, autoRotateSpeed) => {
     const controls = new OrbitControls(camera, domElement);
     controls.enableDamping = true;
     controls.autoRotate = true;
+    controls.minPolarAngle = Math.PI / 2; // disable looking below horizon
+    controls.maxPolarAngle = Math.PI / 2; // disable looking above horizon
     controls.autoRotateSpeed = autoRotateSpeed;
     controls.enablePan = false;
     controls.enableZoom = false;

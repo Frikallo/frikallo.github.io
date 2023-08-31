@@ -20,9 +20,9 @@ const sceneSize = {
     width: 0.5,
     height: 0.5
 };
-const scene = createOBJScene('assets/misc/objs/Moon.obj');
+const scene = createGLTFScene('assets/misc/gltfs/moon.gltf');
 const light = createLight(0, 15, 15);
-const camera = createCamera(sceneSize['width'], sceneSize['height'], 3);
+const camera = createCamera(sceneSize['width'], sceneSize['height'], 13);
 const { renderer, effect } = createASCIIRenderer(sceneSize['width'], sceneSize['height'], 'heroCanvas');
 const controls = setupControls(camera, effect.domElement, 10);
 window.addEventListener('resize', () => onEffectWindowResize(sceneSize['width'], sceneSize['height'], camera, renderer, effect));
@@ -185,4 +185,19 @@ hamburger.addEventListener('click', () => {
         hamburgerInner.style.pointerEvents = 'all';
         hamburgerInner.style.opacity = 1;
     }
+});
+
+// Set up contact form
+
+const contactFormButton = document.querySelector('.contact-form-button');
+const contactFormName = document.querySelector('.contact-form-name');
+const contactFormEmail = document.querySelector('.contact-form-email');
+const contactFormMessage = document.querySelector('.contact-form-message');
+
+contactFormButton.addEventListener('click', () => {
+    let name = contactFormName.value;
+    let email = contactFormEmail.value;
+    let message = contactFormMessage.value;
+
+    console.log(name, email, message);
 });
