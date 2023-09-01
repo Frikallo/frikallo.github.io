@@ -838,6 +838,33 @@ svg {
 	background-color: #2a2b3a;
 }
 
+.contact-form-success {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: #15f16a;
+	border: 1px solid #2a2b3a;
+	color: #030014;
+	border-radius: .6rem;
+	padding: 1rem;
+	margin-top: 1rem;
+	font-size: 1rem;
+	transition: 0.3s ease-in-out;
+}
+
+.contact-form-error {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: #f11515;
+	border: 1px solid #2a2b3a;
+	color: #030014;
+	border-radius: .6rem;
+	padding: 1rem;
+	font-size: 1rem;
+	transition: 0.3s ease-in-out;
+}
+
 .social-icons {
 	grid-area: b;
 	padding: 1rem 0 0 0;

@@ -1,14 +1,15 @@
-import { 
+import {
     createOBJScene,
     createGLTFScene,
-    createLight, 
-    createCamera, 
+    createLight,
+    createCamera,
     createRenderer,
-    createASCIIRenderer, 
-    setupControls, 
+    createASCIIRenderer,
+    setupControls,
     onEffectWindowResize,
     tick,
-    effectTick} from "./ASCIIHero.js";
+    effectTick
+} from "./ASCIIHero.js";
 import { addProject, addBlogLink, loadPdf, get_time, scrollTo, updateLanguage } from "./Utils.js";
 import { Item } from './interactiveItemModule.js';
 
@@ -49,60 +50,60 @@ particlesJS.load("particles-js", 'assets/misc/particles.json');
 
 
 // Add projects to grid
-addProject('YAKbot', 
-            '<img src="assets/img/YAKbot.png" alt="" loading="lazy"/>', 
-            'YAKbot is a collection of AI models based on image generation, analysis, and processing; all wrapped into one Discord Bot. YAKbot\'s out-of-the-box commands range from image generation with VQGAN+CLIP or guided diffusion to image analysis and captioning with personality.', 
-            'YAKbot est une collection de modèles d\'IA basés sur la génération, l\'analyse et le traitement d\'images; le tout enveloppé dans un seul bot Discord. Les commandes prêtes à l\'emploi de YAKbot vont de la génération d\'images avec VQGAN+CLIP ou la diffusion guidée à l\'analyse et à la légende d\'images avec personnalité.',
-            'Discord Bot',  
-            'https://github.com/Frikallo/YAKbot'
+addProject('YAKbot',
+    '<img src="assets/img/YAKbot.png" alt="" loading="lazy"/>',
+    'YAKbot is a collection of AI models based on image generation, analysis, and processing; all wrapped into one Discord Bot. YAKbot\'s out-of-the-box commands range from image generation with VQGAN+CLIP or guided diffusion to image analysis and captioning with personality.',
+    'YAKbot est une collection de modèles d\'IA basés sur la génération, l\'analyse et le traitement d\'images; le tout enveloppé dans un seul bot Discord. Les commandes prêtes à l\'emploi de YAKbot vont de la génération d\'images avec VQGAN+CLIP ou la diffusion guidée à l\'analyse et à la légende d\'images avec personnalité.',
+    'Discord Bot',
+    'https://github.com/Frikallo/YAKbot'
 );
-addProject('SonicSynth', 
-            '<img src="assets/img/SonicSynth.png" alt="" loading="lazy"/>', 
-            'SonicSynth is an audio synthesis library that provides a high-level interface for generating and manipulating various types of sounds. It allows users to create custom sound waves, apply digital signal processing (DSP) effects, and export the synthesized audio data to various audio file formats.', 
-            'SonicSynth est une bibliothèque de synthèse audio qui fournit une interface de haut niveau pour générer et manipuler divers types de sons. Il permet aux utilisateurs de créer des ondes sonores personnalisées, d\'appliquer des effets de traitement numérique du signal (DSP) et d\'exporter les données audio synthétisées vers différents formats de fichiers audio.',
-            'Audio Synthesis', 
-            'https://github.com/Frikallo/SonicSynth'
+addProject('SonicSynth',
+    '<img src="assets/img/SonicSynth.png" alt="" loading="lazy"/>',
+    'SonicSynth is an audio synthesis library that provides a high-level interface for generating and manipulating various types of sounds. It allows users to create custom sound waves, apply digital signal processing (DSP) effects, and export the synthesized audio data to various audio file formats.',
+    'SonicSynth est une bibliothèque de synthèse audio qui fournit une interface de haut niveau pour générer et manipuler divers types de sons. Il permet aux utilisateurs de créer des ondes sonores personnalisées, d\'appliquer des effets de traitement numérique du signal (DSP) et d\'exporter les données audio synthétisées vers différents formats de fichiers audio.',
+    'Audio Synthesis',
+    'https://github.com/Frikallo/SonicSynth'
 );
-addProject('footprint', 
-            '<img src="assets/img/footprint.png" alt="" loading="lazy"/>', 
-            'A python OSINT tool to discover and analyze the digital footprint of a targets email or username across millions of sites.', 
-            'Un outil OSINT python pour découvrir et analyser l\'empreinte sur ligne d\'un e-mail ou d\'un nom d\'utilisateur cible sur des millions de sites.',
-            'OSINT', 
-            'https://github.com/Frikallo/footprint'
+addProject('footprint',
+    '<img src="assets/img/footprint.png" alt="" loading="lazy"/>',
+    'A python OSINT tool to discover and analyze the digital footprint of a targets email or username across millions of sites.',
+    'Un outil OSINT python pour découvrir et analyser l\'empreinte sur ligne d\'un e-mail ou d\'un nom d\'utilisateur cible sur des millions de sites.',
+    'OSINT',
+    'https://github.com/Frikallo/footprint'
 );
-addProject('stargazerz', 
-            '<img src="assets/img/stargazerz.png" alt="" loading="lazy"/>', 
-            'Instantly Retrieve Email Addresses and Usernames of Stargazers from Designated Repositories, Achieving Unparalleled Speed and Efficiency - All Without the Need for an API Key.', 
-            'Récupérez instantanément les adresses e-mail et les noms d\'utilisateur des Stargazers des dépôts désignés, atteignant une vitesse et une efficacité inégalées - le tout sans avoir besoin d\'une clé API.',
-            'Webscraping', 
-            'https://github.com/Frikallo/stargazerz'
+addProject('stargazerz',
+    '<img src="assets/img/stargazerz.png" alt="" loading="lazy"/>',
+    'Instantly Retrieve Email Addresses and Usernames of Stargazers from Designated Repositories, Achieving Unparalleled Speed and Efficiency - All Without the Need for an API Key.',
+    'Récupérez instantanément les adresses e-mail et les noms d\'utilisateur des Stargazers des dépôts désignés, atteignant une vitesse et une efficacité inégalées - le tout sans avoir besoin d\'une clé API.',
+    'Webscraping',
+    'https://github.com/Frikallo/stargazerz'
 );
-addProject('frikallo.io', 
-            '<img src="assets/img/frikallo-io.png" alt="" loading="lazy"/>', 
-            'A personal portfolio website for myself build on HTML, CSS, JS paired with three.js, particles.js and gsap.js', 
-            'Un site web de portfolio personnel pour moi-même construit sur HTML, CSS, JS associé à three.js, particles.js et gsap.js',
-            'Web', 
-            'https://github.com/Frikallo/frikallo.github.io'
+addProject('frikallo.io',
+    '<img src="assets/img/frikallo-io.png" alt="" loading="lazy"/>',
+    'A personal portfolio website for myself build on HTML, CSS, JS paired with three.js, particles.js and gsap.js',
+    'Un site web de portfolio personnel pour moi-même construit sur HTML, CSS, JS associé à three.js, particles.js et gsap.js',
+    'Web',
+    'https://github.com/Frikallo/frikallo.github.io'
 );
-addProject('MISST', 
-            '<img src="assets/img/MISST.png" alt="" loading="lazy"/>', 
-            'A local GUI music source separation tool built on Tkinter and demucs serving as a free and open source Stem Player', 
-            'Un outil de séparation des sources musicales à interface graphique locale construit sur Tkinter et demucs servant de joueur Stem gratuit et open source.',
-            'Audio', 
-            'https://github.com/Frikallo/MISST'
+addProject('MISST',
+    '<img src="assets/img/MISST.png" alt="" loading="lazy"/>',
+    'A local GUI music source separation tool built on Tkinter and demucs serving as a free and open source Stem Player',
+    'Un outil de séparation des sources musicales à interface graphique locale construit sur Tkinter et demucs servant de joueur Stem gratuit et open source.',
+    'Audio',
+    'https://github.com/Frikallo/MISST'
 );
 
-for (let i=0; i<=10; i++) {
-    addBlogLink(`assets/img/blog/no-image.png`, 
-                'blog/post1',
-                'Title',
-                'Title',
-                'Description', 
-                'Description', 
-                '08/30/2023', 
-                '#Tag1', 
-                '#Tag2', 
-                '#Tag3'
+for (let i = 0; i <= 10; i++) {
+    addBlogLink(`assets/img/blog/no-image.png`,
+        'blog/post1',
+        'Title',
+        'Title',
+        'Description',
+        'Description',
+        '08/30/2023',
+        '#Tag1',
+        '#Tag2',
+        '#Tag3'
     );
 }
 
@@ -183,7 +184,7 @@ document.querySelectorAll('.contact-button').forEach(item => {
 });
 
 // Set up sticky navbar
-window.onscroll = function() {stickyNavbar()};
+window.onscroll = function () { stickyNavbar() };
 var navbar = document.querySelector('.nav');
 var sticky = navbar.offsetTop;
 function stickyNavbar() {
@@ -208,18 +209,33 @@ hamburger.addEventListener('click', () => {
 });
 
 // Set up contact form
-
-const contactFormButton = document.querySelector('.contact-form-button');
-const contactFormName = document.querySelector('.contact-form-name');
-const contactFormEmail = document.querySelector('.contact-form-email');
-const contactFormMessage = document.querySelector('.contact-form-message');
-
-contactFormButton.addEventListener('click', () => {
-    let name = contactFormName.value;
-    let email = contactFormEmail.value;
-    let message = contactFormMessage.value;
-
-    console.log(name, email, message);
+const contactForm = document.querySelector('.contact-form');
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    const name = encodeURI(formData.get('fname'));
+    const email = encodeURI(formData.get('email'));
+    const message = encodeURI(formData.get('message'));
+    fetch('https://script.google.com/macros/s/AKfycbxnbXGzwoGM30QRAswH0NcKAR6ubpHhKjCIyIL4ZkwW9JU-IcoZMxBAvGKdk7CkEekJvg/exec', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `fname=${name}&email=${email}&message=${message}`,
+    }).then((response) => {
+        if (response.status == 200) {
+            contactForm.reset();
+            document.querySelector('.contact-form-success').style.display = 'block';
+            setTimeout(() => {
+                document.querySelector('.contact-form-success').style.display = 'none';
+            }, 5000);
+        } else {
+            document.querySelector('.contact-form-error').style.display = 'block';
+            setTimeout(() => {
+                document.querySelector('.contact-form-error').style.display = 'none';
+            }, 5000);
+        }
+    });
 });
 
 // Set up blog carrossel
@@ -250,41 +266,41 @@ function checkScrollBoundaries() {
 }
 setInterval(checkScrollBoundaries, 100);
 
-rightArrow.addEventListener( 'click', function ( e ) {
+rightArrow.addEventListener('click', function (e) {
     x = blogCarrossel.clientWidth / 2 + blogCarrossel.scrollLeft + 0;
-    blogCarrossel.scroll( {
+    blogCarrossel.scroll({
         left: x,
         behavior: 'smooth',
-    } );
+    });
 });
 
-leftArrow.addEventListener( 'click', function ( e ) {
+leftArrow.addEventListener('click', function (e) {
     x = blogCarrossel.clientWidth / 2 - blogCarrossel.scrollLeft + 0;
-    blogCarrossel.scroll( {
+    blogCarrossel.scroll({
         left: -x,
         behavior: 'smooth',
-    } );
+    });
 });
 
-const mousemoveHandler = ( e ) => {
+const mousemoveHandler = (e) => {
     const mx2 = e.pageX - blogCarrossel.offsetLeft;
-    if ( mx > 0 ) {
+    if (mx > 0) {
         blogCarrossel.scrollLeft = blogCarrossel.sx + mx - mx2;
     }
 };
 
-const mousedownHandler = ( e ) => {
+const mousedownHandler = (e) => {
     blogCarrossel.sx = blogCarrossel.scrollLeft;
     mx = e.pageX - blogCarrossel.offsetLeft;
-    blogCarrossel.classList.add( 'dragging' );
+    blogCarrossel.classList.add('dragging');
 };
 
 const mouseupHandler = () => {
     mx = 0;
-    blogCarrossel.classList.remove( 'dragging' );
+    blogCarrossel.classList.remove('dragging');
 };
 
-blogCarrossel.addEventListener( 'mousemove', mousemoveHandler );
-blogCarrossel.addEventListener( 'mousedown', mousedownHandler );
-blogCarrossel.addEventListener( 'mouseup', mouseupHandler );
-blogCarrossel.addEventListener( 'mouseleave', mouseupHandler );
+blogCarrossel.addEventListener('mousemove', mousemoveHandler);
+blogCarrossel.addEventListener('mousedown', mousedownHandler);
+blogCarrossel.addEventListener('mouseup', mouseupHandler);
+blogCarrossel.addEventListener('mouseleave', mouseupHandler);
