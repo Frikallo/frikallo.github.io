@@ -613,6 +613,7 @@ svg {
 .scroll-left-button {
 	background: none;
 	border: none;
+	padding: .5rem;
 }
 
 .scroll-right-button svg,

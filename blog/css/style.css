@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+body {
+	margin: 0;
+	color: var(--color-text);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #030014;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	font-family: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    width: 100%; 
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+code {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+}
+
+@media (max-width: 750px) {
+    #content {
+        width: 550px;
+    }
+}
+@media (max-width: 650px) {
+    #content {
+        width: 450px;
+    }
+}
+@media (max-width: 550px) {
+    #content {
+        width: 350px;
+    }
+}

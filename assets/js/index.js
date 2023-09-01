@@ -94,7 +94,7 @@ addProject('MISST',
 
 for (let i=0; i<=10; i++) {
     addBlogLink(`assets/img/blog/no-image.png`, 
-                'https://frikallo.github.io',
+                'blog/post1',
                 'Title',
                 'Title',
                 'Description', 
@@ -178,7 +178,7 @@ document.querySelectorAll('.resume-button').forEach(item => {
 
 document.querySelectorAll('.contact-button').forEach(item => {
     item.addEventListener('click', event => {
-        scrollTo(document.querySelector('.contact-container'));
+        scrollTo(document.querySelector('.contact-info'));
     });
 });
 

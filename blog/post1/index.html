@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Frikallo.io - Blog</title>
+        <meta name="description" content="Developer and Designer in Canada">
+        <link rel="canonical" href="https://frikallo.github.io">
+        <meta property="og:locale" content="ca_CA">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Frikallo.io">
+        <meta property="og:title" content="Frikallo.io - Noah Kay's Online Portfolio">
+        <meta property="og:description" content="Personal Portfolio for Noah Kay, a Developer and Designer in Canada">
+        <meta property="og:url" content="https://frikallo.github.io">
+        <meta property="og:image" content="https://frikallo.github.io/assets/share-image.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="google" content="nositelinkssearchbox">
+        <meta name="google" content="notranslate">
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="icon" href="../../assets/favicon.png" type="image/png">
+        <link rel="apple-touch-icon" href="../../assets/favicon.png" type="image/png">
+    </head>
+    <body>
+        <div id="content"></div>
+        <script src="https://unpkg.com/dompurify@3.0.3/dist/purify.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script>
+            const reader = new FileReader();
+            const content = document.getElementById('content');
+            const markdown = fetch('post.md')
+            .then(response => response.text())
+            .then(text => {
+                content.innerHTML = DOMPurify.sanitize(marked.parse(text));
+            });
+        </script>
+    </body>
+</html>
