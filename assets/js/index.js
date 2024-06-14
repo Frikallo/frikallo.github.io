@@ -25,9 +25,8 @@ const scene = createGLTFScene('assets/misc/gltfs/moon.gltf');
 const light = createLight(0, 15, 15);
 const camera = createCamera(sceneSize['width'], sceneSize['height'], 13);
 const { renderer, effect } = createASCIIRenderer(sceneSize['width'], sceneSize['height'], 'heroCanvas');
-const controls = setupControls(camera, effect.domElement, 10);
+const controls = setupControls(camera, effect.domElement, 3);
 window.addEventListener('resize', () => onEffectWindowResize(sceneSize['width'], sceneSize['height'], camera, renderer, effect));
-
 scene.add(light);
 scene.add(camera);
 
@@ -139,12 +138,12 @@ const switchButtons = document.querySelectorAll('.language-switch-button');
 switchButtons.forEach(switchButton => {
     switchButton.addEventListener('click', () => {
         let curLanguage = switchButton.textContent;
-        let newLanguage = curLanguage === '🇺🇸' ? '🇫🇷' : '🇺🇸';
+        let newLanguage = curLanguage === '🇬🇧' ? '🇫🇷' : '🇬🇧';
         switchButton.textContent = newLanguage;
         updateLanguage(newLanguage);
     });
 });
-updateLanguage('🇺🇸');
+updateLanguage('🇬🇧');
 
 // Set up scroll to section buttons
 document.querySelectorAll('.home-button').forEach(item => {

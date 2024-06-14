@@ -28,7 +28,7 @@ body {
 h1 {
 	font-weight: 600;
 	font-size: 3rem;
-	background: radial-gradient(45% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
+	background: radial-gradient(65% 100% at 50% 50%, #fff 30%, hsla(0, 0%, 100%, .35) 100%);
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -343,11 +343,17 @@ svg {
 	z-index: 1;
 }
 
+table {
+	margin: auto;
+	text-align: center
+}
+
 #heroCanvas {
 	width: 100%;
 	overflow: hidden;
 	user-select: none;
 	animation: fadeIn 2s linear;
+	margin: 0 auto;
 }
 
 .hero-content {
